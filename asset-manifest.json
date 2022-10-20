@@ -1,13 +1,36 @@
 {
   "files": {
-    "main.css": "./static/css/main.25fea73f.css",
-    "main.js": "./static/js/main.3410a845.js",
+    "main.css": "./static/css/main.d4e42369.css",
+    "main.js": "./static/js/main.a7c276d2.js",
+    "static/media/header_background.png": "./static/media/header_background.0a4296ed70be927f7ba0.png",
+    "static/media/Gilroy-UltraLightItalic.ttf": "./static/media/Gilroy-UltraLightItalic.87f0acd42b27a5408e0b.ttf",
+    "static/media/Gilroy-ThinItalic.ttf": "./static/media/Gilroy-ThinItalic.930dc405dc78cc97a766.ttf",
+    "static/media/Gilroy-LightItalic.ttf": "./static/media/Gilroy-LightItalic.6d1bb712a33e4d603f27.ttf",
+    "static/media/Gilroy-RegularItalic.ttf": "./static/media/Gilroy-RegularItalic.aada5f763052a8db57fe.ttf",
+    "static/media/Gilroy-MediumItalic.ttf": "./static/media/Gilroy-MediumItalic.32e71bba19919e8e0618.ttf",
+    "static/media/Gilroy-SemiBoldItalic.ttf": "./static/media/Gilroy-SemiBoldItalic.1024cf519c52eb8c377f.ttf",
+    "static/media/Gilroy-BoldItalic.ttf": "./static/media/Gilroy-BoldItalic.ef735bce11cfbb759540.ttf",
+    "static/media/Gilroy-Thin.ttf": "./static/media/Gilroy-Thin.28f856b7c4b3d473e0d1.ttf",
+    "static/media/Gilroy-UltraLight.ttf": "./static/media/Gilroy-UltraLight.768c44ec57dc827381b3.ttf",
+    "static/media/Gilroy-Light.ttf": "./static/media/Gilroy-Light.1822a291dd62fe2cca72.ttf",
+    "static/media/Gilroy-ExtraBoldItalic.ttf": "./static/media/Gilroy-ExtraBoldItalic.33f2985b2a89eeb1008b.ttf",
+    "static/media/Gilroy-Regular.ttf": "./static/media/Gilroy-Regular.5b89a8df3b17dccdb73f.ttf",
+    "static/media/Gilroy-Medium.ttf": "./static/media/Gilroy-Medium.1b4da6582f83f45ea039.ttf",
+    "static/media/Gilroy-SemiBold.ttf": "./static/media/Gilroy-SemiBold.07b9100a72fe7d46d20a.ttf",
+    "static/media/Gilroy-BlackItalic.ttf": "./static/media/Gilroy-BlackItalic.166365ebe89db575a0c1.ttf",
+    "static/media/Gilroy-Bold.ttf": "./static/media/Gilroy-Bold.ca49f7658c4eaac78b6d.ttf",
+    "static/media/Gilroy-HeavyItalic.ttf": "./static/media/Gilroy-HeavyItalic.e03ca91e292d53be084a.ttf",
+    "static/media/Gilroy-ExtraBold.ttf": "./static/media/Gilroy-ExtraBold.59a66eb8c577778daaa5.ttf",
+    "static/media/Gilroy-Black.ttf": "./static/media/Gilroy-Black.3566c87fe5eaaa7052d5.ttf",
+    "static/media/Gilroy-Heavy.ttf": "./static/media/Gilroy-Heavy.41ca3e2d8c1dc7d3cde9.ttf",
+    "static/media/dream_icon.png": "./static/media/dream_icon.51d2a681ca3f8159f754.png",
+    "static/media/canada_icon.png": "./static/media/canada_icon.ae98d93f408005dc4c0a.png",
     "index.html": "./index.html",
-    "main.25fea73f.css.map": "./static/css/main.25fea73f.css.map",
-    "main.3410a845.js.map": "./static/js/main.3410a845.js.map"
+    "main.d4e42369.css.map": "./static/css/main.d4e42369.css.map",
+    "main.a7c276d2.js.map": "./static/js/main.a7c276d2.js.map"
   },
   "entrypoints": [
-    "static/css/main.25fea73f.css",
-    "static/js/main.3410a845.js"
+    "static/css/main.d4e42369.css",
+    "static/js/main.a7c276d2.js"
   ]
 }
