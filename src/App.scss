@@ -78,7 +78,7 @@
 
   &__buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 
     &--button-budget {
       font-weight: 600;
@@ -99,7 +99,8 @@
       color: #880027;
       background: #FFFFFF;
       border-radius: 10px;
-      padding: 14px 12px;
+      padding: 14px 24px;
+      margin-left: 22px;
     }
   }
 }
