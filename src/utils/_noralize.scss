@@ -1,0 +1,19 @@
+@import '../fonts/font-family.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Gilroy;
+}
+
+button {
+  font-family: Gilroy;
+  border: none;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
