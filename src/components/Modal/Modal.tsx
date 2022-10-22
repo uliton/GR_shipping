@@ -14,17 +14,36 @@ export const Modal: React.FC<Props> = ({ modalStatus, setModalStatus }) => {
   };
 
   const handleInputChange = (value: string) => {
-    if (value.length <= 18 ) {
-      if (value.length > 6) {
-        setQuery(value);
+    const symbols = '(+-1234567890)';
+    if (symbols.includes(value[value.length - 1])) {
+      
+      if (value.length < query.length && value.length === 15) {
+        console.log('15');
+        
+        return setQuery(value.slice(0, 14));
+      }
+
+      if (value.length < query.length && value.length === 12) {
+        console.log('12');
+        return setQuery(value.slice(0, 11))
+      }
+
+      if (value.length < query.length && value.length === 8) {
+        return setQuery(value.slice(0, 7))
       }
   
-      if (value.length === 8) {
-        setQuery(`${value})`);
-      }
-  
-      if (value.length === 12 || value.length === 15) {
-        setQuery(`${value}-`);
+      if (value.length <= 18 ) {
+        if (value.length >= 6) {
+          setQuery(value);
+        }
+    
+        if (value.length === 8) {
+          setQuery(`${value})`);
+        }
+    
+        if (value.length === 12 || value.length === 15) {
+          setQuery(`${value}-`);
+        }
       }
     }
   };
@@ -32,7 +51,7 @@ export const Modal: React.FC<Props> = ({ modalStatus, setModalStatus }) => {
   const handleSubmitClick = () => {
     setModalStatus(!modalStatus);
   };
-  
+
   return (
     <div
       className="modal"
@@ -64,9 +83,7 @@ export const Modal: React.FC<Props> = ({ modalStatus, setModalStatus }) => {
           <input
             type="text"
             className="form__input form__input--input"
-            // placeholder="+38-(0"
             value={query}
-            // onClick={handleInputClick}
             onChange={(e) => {handleInputChange(e.target.value)}}
           />
           

@@ -43,8 +43,6 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between; // временно
-    // height: 100%;
     color: #000000;
     padding: 14px 84px 62px;
   }
@@ -86,13 +84,6 @@
         border: 2px solid #880027;
         outline: none;
       }
-
-      // &::placeholder {
-      //   font-weight: 600;
-      //   font-size: 27px;
-      //   line-height: 130%;
-      //   color: #6C6C6C;
-      // }
     }
 
     &--checkbox {
