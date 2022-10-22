@@ -7,15 +7,25 @@ type Props = {
 }
 
 export const Modal: React.FC<Props> = ({ modalStatus, setModalStatus }) => {
-  const [query, setQuery] = useState<string>('');
+  const [query, setQuery] = useState<string>('+38-(0');
 
   const handleExitClick = () => {
     setModalStatus(!modalStatus);
   };
 
-  const handleInputClick = () => {
-    if (!query.length) {
-      setQuery('+38-(0');
+  const handleInputChange = (value: string) => {
+    if (value.length <= 18 ) {
+      if (value.length > 6) {
+        setQuery(value);
+      }
+  
+      if (value.length === 8) {
+        setQuery(`${value})`);
+      }
+  
+      if (value.length === 12 || value.length === 15) {
+        setQuery(`${value}-`);
+      }
     }
   };
 
@@ -54,10 +64,10 @@ export const Modal: React.FC<Props> = ({ modalStatus, setModalStatus }) => {
           <input
             type="text"
             className="form__input form__input--input"
-            placeholder="+38-(0"
+            // placeholder="+38-(0"
             value={query}
-            onClick={handleInputClick}
-            onChange={(e) => {setQuery(e.target.value)}}
+            // onClick={handleInputClick}
+            onChange={(e) => {handleInputChange(e.target.value)}}
           />
           
           <div className="form__input form__input--checkbox checkbox">
