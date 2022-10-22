@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.78e2055d.css",
-    "main.js": "./static/js/main.a7c276d2.js",
+    "main.css": "./static/css/main.80a55755.css",
+    "main.js": "./static/js/main.5e7ab705.js",
     "static/media/header_background.png": "./static/media/header_background.0a4296ed70be927f7ba0.png",
     "static/media/Gilroy-UltraLightItalic.ttf": "./static/media/Gilroy-UltraLightItalic.87f0acd42b27a5408e0b.ttf",
     "static/media/Gilroy-ThinItalic.ttf": "./static/media/Gilroy-ThinItalic.930dc405dc78cc97a766.ttf",
@@ -26,11 +26,12 @@
     "static/media/dream_icon.png": "./static/media/dream_icon.51d2a681ca3f8159f754.png",
     "static/media/canada_icon.png": "./static/media/canada_icon.ae98d93f408005dc4c0a.png",
     "index.html": "./index.html",
-    "main.78e2055d.css.map": "./static/css/main.78e2055d.css.map",
-    "main.a7c276d2.js.map": "./static/js/main.a7c276d2.js.map"
+    "static/media/modal_exit_icon.svg": "./static/media/modal_exit_icon.71fbbbb0659ff58ddf6bf7b08c82dfc0.svg",
+    "main.80a55755.css.map": "./static/css/main.80a55755.css.map",
+    "main.5e7ab705.js.map": "./static/js/main.5e7ab705.js.map"
   },
   "entrypoints": [
-    "static/css/main.78e2055d.css",
-    "static/js/main.a7c276d2.js"
+    "static/css/main.80a55755.css",
+    "static/js/main.5e7ab705.js"
   ]
 }
