@@ -2,5 +2,8 @@
 @import './utils/mixins';
 @import './utils/reset';
 @import './utils/noralize';
+@import './utils/container';
 
 @import './App.scss';
+@import './components/Header/Header.scss';
+@import './components/Modal/Modal.scss';
