@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.7a2db3f2.css",
-    "main.js": "./static/js/main.90d4ff4b.js",
+    "main.css": "./static/css/main.e63ba86e.css",
+    "main.js": "./static/js/main.d5ce44c5.js",
     "static/media/header_background.png": "./static/media/header_background.0a4296ed70be927f7ba0.png",
     "static/media/Gilroy-UltraLightItalic.ttf": "./static/media/Gilroy-UltraLightItalic.87f0acd42b27a5408e0b.ttf",
     "static/media/Gilroy-ThinItalic.ttf": "./static/media/Gilroy-ThinItalic.930dc405dc78cc97a766.ttf",
     "static/media/Gilroy-LightItalic.ttf": "./static/media/Gilroy-LightItalic.6d1bb712a33e4d603f27.ttf",
     "static/media/Gilroy-RegularItalic.ttf": "./static/media/Gilroy-RegularItalic.aada5f763052a8db57fe.ttf",
     "static/media/Gilroy-MediumItalic.ttf": "./static/media/Gilroy-MediumItalic.32e71bba19919e8e0618.ttf",
+    "static/media/cars.png": "./static/media/cars.c1afa1e9ae1ef528a4d1.png",
     "static/media/Gilroy-SemiBoldItalic.ttf": "./static/media/Gilroy-SemiBoldItalic.1024cf519c52eb8c377f.ttf",
     "static/media/Gilroy-BoldItalic.ttf": "./static/media/Gilroy-BoldItalic.ef735bce11cfbb759540.ttf",
     "static/media/Gilroy-Thin.ttf": "./static/media/Gilroy-Thin.28f856b7c4b3d473e0d1.ttf",
@@ -23,15 +24,19 @@
     "static/media/Gilroy-ExtraBold.ttf": "./static/media/Gilroy-ExtraBold.59a66eb8c577778daaa5.ttf",
     "static/media/Gilroy-Black.ttf": "./static/media/Gilroy-Black.3566c87fe5eaaa7052d5.ttf",
     "static/media/Gilroy-Heavy.ttf": "./static/media/Gilroy-Heavy.41ca3e2d8c1dc7d3cde9.ttf",
+    "static/media/category_2.png": "./static/media/category_2.82174da8a8e5494fd2b7.png",
+    "static/media/category_1.png": "./static/media/category_1.251ca9a7fb3991d70be1.png",
+    "static/media/category_3.png": "./static/media/category_3.e839283da234b58a7c32.png",
+    "static/media/map.png": "./static/media/map.36b7c5bd80e09aa8cb0f.png",
     "static/media/dream_icon.png": "./static/media/dream_icon.51d2a681ca3f8159f754.png",
     "static/media/canada_icon.png": "./static/media/canada_icon.ae98d93f408005dc4c0a.png",
     "index.html": "./index.html",
     "static/media/modal_exit_icon.svg": "./static/media/modal_exit_icon.71fbbbb0659ff58ddf6bf7b08c82dfc0.svg",
-    "main.7a2db3f2.css.map": "./static/css/main.7a2db3f2.css.map",
-    "main.90d4ff4b.js.map": "./static/js/main.90d4ff4b.js.map"
+    "main.e63ba86e.css.map": "./static/css/main.e63ba86e.css.map",
+    "main.d5ce44c5.js.map": "./static/js/main.d5ce44c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a2db3f2.css",
-    "static/js/main.90d4ff4b.js"
+    "static/css/main.e63ba86e.css",
+    "static/js/main.d5ce44c5.js"
   ]
 }
