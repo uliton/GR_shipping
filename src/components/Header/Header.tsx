@@ -7,7 +7,7 @@ import dream_icon from "../../images/dream_icon.png";
 import moto_icon from "../../images/moto_icon.png";
 import roro_icon from "../../images/roro_icon.png";
 
-export const Header = () => {
+export const Header: React.FC = () => {
   const [modalStatus, setModalStatus] = useState<boolean>(false);
 
   const handlerClick = () => {

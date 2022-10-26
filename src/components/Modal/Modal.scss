@@ -100,10 +100,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
     
     &--container {
       width: 286px;
       height: 58px;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 27px;
       color: #FFFFFF;
       background: #223C2B;
       border-radius: 6.19802px;

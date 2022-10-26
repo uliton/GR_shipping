@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom'
 import exit_icon from '../../images/modal_exit_icon.svg';
 
 type Props = {
@@ -18,13 +19,10 @@ export const Modal: React.FC<Props> = ({ modalStatus, setModalStatus }) => {
     if (symbols.includes(value[value.length - 1])) {
       
       if (value.length < query.length && value.length === 15) {
-        console.log('15');
-        
         return setQuery(value.slice(0, 14));
       }
 
       if (value.length < query.length && value.length === 12) {
-        console.log('12');
         return setQuery(value.slice(0, 11))
       }
 
@@ -101,7 +99,7 @@ export const Modal: React.FC<Props> = ({ modalStatus, setModalStatus }) => {
             </label>
           </div>
 
-          <div className="form__submit-button">
+          <Link to="/calculator" className="form__submit-button">
             <button
               type="button"
               className="form__submit-button--container"
@@ -109,7 +107,7 @@ export const Modal: React.FC<Props> = ({ modalStatus, setModalStatus }) => {
             >
               Отримати розрахунок
             </button>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
