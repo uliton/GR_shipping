@@ -1,0 +1,188 @@
+.calcBoxCustoms {
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;    
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    padding-top: 40px;
+  }
+
+  &__form {
+    padding: 19px 29px 32px 113px;
+    gap: 50px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 130%;
+    padding: 20px 116px;
+    color: #FFFFFF;
+    background: #223C2B;
+  }
+
+  &__infoCont {
+    width: 580px;
+
+    &__engine {
+      margin-bottom: 31px;
+      &__title {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 130%;
+        color: #000000;
+        margin-bottom: 12px;
+      }
+      &__buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+      &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 124px;
+        height: 44px;
+        font-weight: 700;
+        font-size: 21px;
+        line-height: 144.5%;
+        color: #000000;
+        background: #FFFFFF;
+        box-shadow: 3.79581px 3.79581px 10.6283px rgba(0, 0, 0, 0.15);
+        border-radius: 3.79581px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__auction {
+      margin-bottom: 31px;
+      &__title {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 130%;
+        color: #000000;
+        margin-bottom: 12px;
+      }
+      &__buttons {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+      }
+      &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 163px;
+        height: 80px;
+        background: #FFFFFF;
+        box-shadow: 4.50753px 4.50753px 12.6211px rgba(0, 0, 0, 0.15);
+        border-radius: 4.50753px;
+        &:hover {
+          cursor: pointer;
+        }
+        &--copart {
+          width: 116px;
+        }
+        &--manheim {
+          width: 127px;
+        }
+        &--aiia {
+          width: 83px;
+        }
+      }
+    }
+
+    &__addition {
+      display: flex;
+      justify-content: space-between;
+      &__box {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        &__title {
+          font-weight: 700;
+          font-size: 25px;
+          line-height: 130%;
+          color: #000000;
+          margin-bottom: 14px;
+        }
+        &__input {
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 130%;
+          width: 160px;
+          height: 43px;
+          padding: 9px 15px;
+          color: #000000;
+          border: 1.3073px solid #D8D8D8;
+          border-radius: 5.22919px;
+          outline: none;
+          &::placeholder {
+            color: #6C6C6C;
+          }
+          &:focus {
+            border: 1.3073px solid #000000;
+          }
+        }
+      }
+    }
+  }
+
+  &__imageCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+      width: 626px;
+    }
+  }
+
+  &__resultsCont{
+    padding-right: 60px;
+    // &__box {
+    //   margin-bottom: 16px;
+
+    //   display: flex;
+    //   justify-content: space-between;
+    //   padding-bottom: 8.5px;
+    //   margin-bottom: 17.5px;
+    //   font-size: 20px;
+    //   line-height: 130%;
+    //   color: #000000;
+    //   border-bottom: 1px solid #000;
+    //   &:last-child {
+    //     padding-bottom: 0;
+    //     margin-bottom: 0;
+    //   }
+    //   // &--last {
+    //   //   border: none;
+    //   // }
+    //   // &__name {
+    //   //   font-weight: 600;
+    //   //   width: 260px;
+    //   // }
+    //   // &__percent {
+    //   //   font-weight: 600;
+    //   // }
+    //   // &__cost {
+    //   //   font-weight: 700;
+    //   // }
+    // }
+  }
+}
+
+input:checked + .calcBoxCustoms__infoCont__engine__button {
+  color: #880027;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 23px rgba(0, 0, 0, 0.15);
+}
+
+input:checked + .calcBoxCustoms__infoCont__auction__button {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 30px rgba(0, 0, 0, 0.15);
+}

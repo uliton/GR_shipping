@@ -1,0 +1,54 @@
+.calcH {
+  &__location {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+    color: #000000;
+    margin-bottom: 8px;
+
+  }
+
+  &__form {
+    margin: 0 100px 68px;
+    
+    &__title {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 130%;
+      color: #000000;
+      margin-bottom: 24px;
+    }
+    
+    &__container {
+      display: flex;
+      gap: 44px;
+
+      &__input {
+        width: 660px;
+        height: 44px;
+        padding: 9px 12px;
+        border: 1.3073px solid #D8D8D8;
+        border-radius: 5.22919px;
+        outline: inherit;
+      }
+
+      &__button {
+        width: 316.37px;
+        height: 43.14px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 130%;
+        color: #FFFFFF;
+        background: #223C2B;
+        border-radius: 5.22919px;
+      }
+    }
+  }
+
+  &__footer {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 130%;
+    color: #000000;
+  }
+}

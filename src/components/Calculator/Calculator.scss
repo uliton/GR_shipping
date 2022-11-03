@@ -1,0 +1,20 @@
+.calculator {
+
+  &__header {
+    margin: 0 190px 30px 130px;
+  }
+
+  &__box {
+    background: #FFFFFF;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    width: 1400px;
+    margin: 0 auto 48px;
+  }
+
+}
+
+.calcGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

@@ -1,0 +1,14 @@
+.mapUSA__state {
+  fill: #C4C4C4;
+  stroke: #B9B9B9;
+  cursor: pointer;
+
+  &:hover {
+    fill: #223C2B;
+    stroke: #223C2B;
+  }
+
+  &--selected {
+    fill: #223C2B;
+  }
+}

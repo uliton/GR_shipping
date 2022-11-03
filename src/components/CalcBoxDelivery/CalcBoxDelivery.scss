@@ -1,0 +1,194 @@
+.calcBoxDelivery {
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;    
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    padding-top: 40px;
+  }
+
+  &__form {
+    padding: 19px 29px 32px 113px;
+    gap: 50px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 130%;
+    padding: 20px 116px;
+    color: #FFFFFF;
+    background: #223C2B;
+  }
+
+  &__category {
+    &__title {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 130%;
+      color: #000000;
+      margin-bottom: 17px;
+    }
+    
+    &__buttons {
+      display: flex;
+      gap: 43px;
+      margin-bottom: 107px;
+    }
+
+    &__button {
+      width: 152px;
+      height: 162px;
+      text-align: center;
+      padding: 24px 8px 22px;
+      background: #FFFFFF;
+      box-shadow: 4.50753px 4.50753px 12.6211px rgba(0, 0, 0, 0.15);
+      border-radius: 4.50753px;
+      
+      &__title {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 9px;
+        color: #000000;
+      }
+      
+      &__text {
+        width: min-content;
+        margin: auto;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 130%;
+        color: #000000;
+      }
+    }
+  }
+
+  &__map {
+    padding-right: 60px;
+    
+    &__title {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 130%;
+      color: #000000;
+      margin-bottom: 18px;
+    }
+
+    &__image {
+      fill: #C4C4C4;
+      stroke: #B9B9B9;
+      cursor: pointer;
+
+      &:hover {
+        fill: #223C2B;
+        stroke: #223C2B;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      justify-content: center;
+      gap: 43px;
+      margin-bottom: 29px;
+    }
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 152px;
+      height: 69px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 130%;
+      color: #000000;
+      background: #FFFFFF;
+      box-shadow: 4.50753px 4.50753px 12.6211px rgba(0, 0, 0, 0.15);
+      border-radius: 4.50753px;
+    }
+
+    &__ports {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &__port {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 20px;
+      line-height: 130%;
+      color: #000000;
+      
+      // &__image {
+      //   fill: #C4C4C4;
+      //   cursor: pointer;
+
+      //   &:hover {
+      //     fill: #223C2B;
+      //   }
+
+
+        // &__ukraine {
+        //   margin-bottom: 12px;
+        // }
+        // &__german {
+        //   margin-bottom: 14px;
+        // }
+        // &__georgia {
+        //   margin-bottom: 27px;
+        // }
+      // }
+      
+      &__country {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__resultsCont {
+    padding-right: 60px;
+    // &__box {
+    //   // display: flex;
+    //   // justify-content: space-between;
+    //   // padding: 8.5px;
+    //   // margin-bottom: 17.5px;
+    //   // border-bottom: 1px solid #7C7C7C;
+
+    //   // &:last-child {
+    //   //   margin-bottom: 0;
+    //   // }
+    //   // &__name {
+    //   //   font-weight: 600;
+    //   //   font-size: 20px;
+    //   //   line-height: 130%;
+    //   //   color: #000000;
+    //   // }
+
+    //   // &__cost {
+    //   //   font-weight: 700;
+    //   //   font-size: 20px;
+    //   //   line-height: 130%;
+    //   //   color: #000000;
+    //   // }
+    // }
+  }
+}
+
+input:checked + .calcBoxDelivery__category__button {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 63px rgba(0, 0, 0, 0.15);
+}
+
+input:checked + .calcBoxDelivery__category__button > .calcBoxDelivery__category__button__title {
+  color: #880027;
+}
+
+input:checked + .calcBoxDelivery__map__button {
+  color: #880027;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 37px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,95 @@
+.calcBoxTotalCost {
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;    
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    padding-top: 40px;
+  }
+
+  &__form {
+    padding: 19px 29px 32px 113px;
+    gap: 50px;
+  }
+
+  &__footer {
+    background: #F2F2F2;
+    &__box {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 90px 0 110px;
+      margin-bottom: 30px;
+      &__name {
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 130%;
+        color: #000000;
+      }
+      &__cost {
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 130%;
+        color: #000000;
+      }
+    }
+    &__buttons {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 90px 25px 110px;
+    }
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 196px;
+      height: 43px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 130%;
+      color: #FFFFFF;
+      background: #880027;
+      border-radius: 5.22919px;
+    }
+  }
+
+  // &__resultsCont {
+  //   padding-right: 60px;
+  //   &__box {
+  //     display: flex;
+  //     justify-content: space-between;
+  //     padding-bottom: 8.5px;
+  //     margin-bottom: 17.5px;
+  //     border-bottom: 1px solid #7C7C7C;
+  //     &:last-child {
+  //       margin-bottom: 0;
+  //       border-bottom: none;
+  //     }
+
+  //     &__name {
+  //       display: flex;
+  //       align-items: center;
+  //       font-weight: 600;
+  //       font-size: 20px;
+  //       line-height: 130%;
+  //       color: #000000;
+  //       &--lable {
+  //         margin-left: 13px;
+  //       }
+  //     }
+  //     &__percent {
+  //       font-weight: 600;
+  //       font-size: 20px;
+  //       line-height: 130%;
+  //       color: #AFAFAF;
+  //     }
+  //     &__cost {
+  //       font-weight: 700;
+  //       font-size: 20px;
+  //       line-height: 130%;
+  //       color: #000000;
+  //     }
+  //   }
+  // }
+}
