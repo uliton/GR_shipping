@@ -3,7 +3,7 @@ import { CalcHeader } from "../CalcHeader";
 import { CalcBoxCustoms } from "../CalcBoxCustoms";
 import { CalcBoxDelivery } from "../CalcBoxDelivery";
 import { CalcBoxTotalCost } from "../CalcBoxTotalCost";
-import { auctionTaxCalculation, clearanceCalculation, deliveryPriceCalculation, exciseCalculation, insuranceCalculation, portDelivery, stateDeliveryCalculation, totalCalculation } from "../../framework/calculator";
+import { auctionTaxCalculation, clearanceCalculation, deliveryPriceCalculation, exciseCalculation, insuranceCalculation, portDelivery, releaseContainerAndBroker, stateDeliveryCalculation, totalCalculation } from "../../framework/calculator";
 
 export const Calculator: React.FC = () => {
   const [engine, setEngine] = useState<string>('');
@@ -20,14 +20,15 @@ export const Calculator: React.FC = () => {
   const [county, setCounty] = useState('');
   const [map, setMap] = useState("usa");
   const [port, setPort] = useState('');
-  const localStateDelivery: number = stateDeliveryCalculation(category, map, county) || 0;
-  const toPortDelivery: number = portDelivery(port) || 0;
+  const localStateDelivery: number = stateDeliveryCalculation(auction, map, county) || 0;
+  const toPortDelivery: number = portDelivery(category, county, port) || 0;
+  const containerAndBroker: number = releaseContainerAndBroker(localStateDelivery, toPortDelivery) || 0;
   const documentsDelivery = 32;
   const complex = 990;
 
   const totalCustomsPrice: number = (Number(lotCost) + auction_fee + excise + insurance) || 0;
-  const totalDeliveryPrice: number = deliveryPriceCalculation(localStateDelivery, toPortDelivery, documentsDelivery, complex) || 0;
-  const clearance: number = clearanceCalculation(lotCost, auction_fee) || 0;
+  const totalDeliveryPrice: number = deliveryPriceCalculation(localStateDelivery, toPortDelivery, containerAndBroker, documentsDelivery, complex) || 0;
+  const clearance: number = clearanceCalculation(lotYear, lotCost, auction_fee, localStateDelivery, toPortDelivery) || 0;
   const total: number = totalCalculation(totalCustomsPrice, totalDeliveryPrice, clearance) || 0;
   
   return (
@@ -56,6 +57,7 @@ export const Calculator: React.FC = () => {
         port={port}
         localStateDelivery={localStateDelivery.toFixed(2)}
         toPortDelivery={toPortDelivery.toFixed(2)}
+        containerAndBroker={containerAndBroker.toFixed(2)}
         documentsDelivery={documentsDelivery.toFixed(2)}
         complex={complex.toFixed(2)}
         totalDeliveryPrice={totalDeliveryPrice.toFixed(2)}

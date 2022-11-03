@@ -25,11 +25,269 @@ export const MAP_CONFIG: MapConfig = {
   poland: 'poland',
 }
 
+const USA_DELIVERY_CONFIG = {
+  'AL': {
+    copart: 425,
+    aiia: 425,
+    port: 'GA',
+  },
+  'AR': {
+    copart: 500,
+    aiia: 500,
+    port: 'TX',
+  },
+  'AZ': {
+    copart: 350,
+    aiia: 350,
+    port: 'CA',
+  },
+  'CA': {
+    copart: 275,
+    aiia: 275,
+    port: 'CA',
+  },
+  'CO': {
+    copart: 675,
+    aiia: 675,
+    port: 'TX',
+  },
+  'CT': {
+    copart: 300,
+    aiia: 300,
+    port: 'NJ',
+  },
+  'DE': {
+    copart: 350,
+    aiia: 300,
+    port: 'NJ',
+  },
+  'FL': {
+    copart: 250,
+    aiia: 250,
+    port: 'GA',
+  },
+  'GA': {
+    copart: 200,
+    aiia: 200,
+    port: 'GA',
+  },
+  'IA': {
+    copart: 700,
+    aiia: 700,
+    port: 'NJ',
+  },
+  'ID': {
+    copart: 850,
+    aiia: 850,
+    port: 'CA',
+  },
+  'IL': {
+    copart: 575,
+    aiia: 575,
+    port: 'NJ',
+  },
+  'IN': {
+    copart: 600,
+    aiia: 600,
+    port: 'NJ',
+  },
+  'KS': {
+    copart: 575,
+    aiia: 575,
+    port: 'TX',
+  },
+  'KY': {
+    copart: 625,
+    aiia: 625,
+    port: 'NJ',
+  },
+  'LA': {
+    copart: 375,
+    aiia: 375,
+    port: 'TX',
+  },
+  'MA': {
+    copart: 375,
+    aiia: 375,
+    port: 'NJ',
+  },
+  'MD': {
+    copart: 325,
+    aiia: 325,
+    port: 'NJ',
+  },
+  'ME': {
+    copart: 475,
+    aiia: 475,
+    port: 'NJ',
+  },
+  'MI': {
+    copart: 675,
+    aiia: 675,
+    port: 'NJ',
+  },
+  'MN': {
+    copart: 700,
+    aiia: 700,
+    port: 'NJ',
+  },
+  'MO': {
+    copart: 675,
+    aiia: 675,
+    port: 'NJ',
+  },
+  'MS': {
+    copart: 475,
+    aiia: 475,
+    port: 'GA',
+  },
+  'MT': {
+    copart: 1100,
+    aiia: 1100,
+    port: 'CA',
+  },
+  'NC': {
+    copart: 325,
+    aiia: 325,
+    port: 'GA',
+  },
+  'ND': {
+    copart: 0, // немає
+    aiia: 1150,
+    port: 'NJ',
+  },
+  'NE': {
+    copart: 700,
+    aiia: 700,
+    port: 'NJ',
+  },
+  'NH': {
+    copart: 425,
+    aiia: 425,
+    port: 'NJ',
+  },
+  'NJ': {
+    copart: 200,
+    aiia: 175,
+    port: 'NJ',
+  },
+  'NM': {
+    copart: 675,
+    aiia: 675,
+    port: 'TX',
+  },
+  'NV': {
+    copart: 400,
+    aiia: 400,
+    port: 'CA',
+  },
+  'NY': {
+    copart: 275,
+    aiia: 275,
+    port: 'NJ',
+  },
+  'OH': {
+    copart: 500,
+    aiia: 500,
+    port: 'NJ',
+  },
+  'OK': {
+    copart: 450,
+    aiia: 450,
+    port: 'TX',
+  },
+  'OR': {
+    copart: 600,
+    aiia: 600,
+    port: 'CA',
+  },
+  'PA': {
+    copart: 250,
+    aiia: 250,
+    port: 'NJ',
+  },
+  'RI': {
+    copart: 375,
+    aiia: 375,
+    port: 'NJ',
+  },
+  'SC': {
+    copart: 325,
+    aiia: 325,
+    port: 'GA',
+  },
+  'SD': {
+    copart: 1200,
+    aiia: 1200,
+    port: 'NJ',
+  },
+  'TN': {
+    copart: 475,
+    aiia: 475,
+    port: 'GA',
+  },
+  'TX': {
+    copart: 175,
+    aiia: 175,
+    port: 'TX',
+  },
+  'UT': {
+    copart: 550,
+    aiia: 550,
+    port: 'CA',
+  },
+  'VA': {
+    copart: 400,
+    aiia: 400,
+    port: 'NJ',
+  },
+  'VT': {
+    copart: 550,
+    aiia: 550,
+    port: 'NJ',
+  },
+  'WA': {
+    copart: 675,
+    aiia: 675,
+    port: 'CA',
+  },
+  'WI': {
+    copart: 675,
+    aiia: 675,
+    port: 'NJ',
+  },
+  'WV': {
+    copart: 575,
+    aiia: 575,
+    port: 'NJ',
+  },
+  'WY': {
+    copart: 0,
+    aiia: 0,
+    port: '',
+  }, //чекаю
+  'DC': {
+    copart: 0,
+    aiia: 0,
+    port: '',
+  }, //чекаю
+  'AK': {
+    copart: 0,
+    aiia: 0,
+    port: 'CA',
+  }, //по замовленню
+  'HI': {
+    copart: 0,
+    aiia: 0,
+    port: 'TX',
+  }, //по замовленню
+}
 
 // auctions fee
 export const auctionTaxCalculation = (lotCost: string, auction: string) => {
+  const cost = Number(lotCost);
+  
   if (auction) {
-    const cost = Number(lotCost);
     const fixFee = 79;
     const extraFee = 10;
     const minCost = fixFee + extraFee;
@@ -135,96 +393,83 @@ export const insuranceCalculation = (lotCost: string, auction_fee: number, perce
 
 
 // locale state delivery
-export const stateDeliveryCalculation = (category: string, map: string, county: string) => {
+export const stateDeliveryCalculation = (auction: string, map: string, county: string) => {
   
   if (map === MAP_CONFIG.usa) {
-    const states = {
-      'AL': 425,
-      'AR': 500,
-      'AZ': 350,
-      'CA': 275,
-      'CO': 675,
-      'CT': 300,
-      'DE': 300,
-      'FL': 250,
-      'GA': 250,
-      'IA': 700,
-      'ID': 850,
-      'IL': 575,
-      'IN': 600,
-      'KS': 575,
-      'KY': 625,
-      'LA': 375,
-      'MA': 375,
-      'MD': 325,
-      'ME': 475,
-      'MI': 675,
-      'MN': 700,
-      'MO': 675,
-      'MS': 475,
-      'MT': 1100,
-      'NC': 325,
-      'ND': 1150,
-      'NE': 700,
-      'NH': 425,
-      'NJ': 175,
-      'NM': 675,
-      'NV': 400,
-      'NY': 275,
-      'OH': 500,
-      'OK': 450,
-      'OR': 600,
-      'PA': 250,
-      'RI': 375,
-      'SC': 325,
-      'SD': 1200,
-      'TN': 475,
-      'TX': 175,
-      'UT': 550,
-      'VA': 400,
-      'VT': 550,
-      'WA': 675,
-      'WI': 675,
-      'WV': 575,
-    }
+    // const states = {
+    //   'AL': 425,
+    //   'AR': 500,
+    //   'AZ': 350,
+    //   'CA': 275,
+    //   'CO': 675,
+    //   'CT': 300,
+    //   'DE': 300,
+    //   'FL': 250,
+    //   'GA': 250,
+    //   'IA': 700,
+    //   'ID': 850,
+    //   'IL': 575,
+    //   'IN': 600,
+    //   'KS': 575,
+    //   'KY': 625,
+    //   'LA': 375,
+    //   'MA': 375,
+    //   'MD': 325,
+    //   'ME': 475,
+    //   'MI': 675,
+    //   'MN': 700,
+    //   'MO': 675,
+    //   'MS': 475,
+    //   'MT': 1100,
+    //   'NC': 325,
+    //   'ND': 1150,
+    //   'NE': 700,
+    //   'NH': 425,
+    //   'NJ': 175,
+    //   'NM': 675,
+    //   'NV': 400,
+    //   'NY': 275,
+    //   'OH': 500,
+    //   'OK': 450,
+    //   'OR': 600,
+    //   'PA': 250,
+    //   'RI': 375,
+    //   'SC': 325,
+    //   'SD': 1200,
+    //   'TN': 475,
+    //   'TX': 175,
+    //   'UT': 550,
+    //   'VA': 400,
+    //   'VT': 550,
+    //   'WA': 675,
+    //   'WI': 675,
+    //   'WV': 575,
+    //   'WY': 0, //чекаю
+    //   'DC': 0, //чекаю
+    //   'AK': 0, //по замовленню
+    //   'HI': 0, //по замовленню
+    // }
 
-    if (category === CATEGORY_CONFIG.first) {
-      // нужно добівить обработку порта
-      let stateDelivery: number = 0;
-      for (const state in states) {
+    if (auction === AUCTIONS_CONFIG.copart) {
+      for (const state in USA_DELIVERY_CONFIG) {
         if (state === county) {
           // @ts-ignore
-          stateDelivery = states[state];
+          const stateDelivery = USA_DELIVERY_CONFIG[state][AUCTIONS_CONFIG.copart];
+
+          return stateDelivery;
         }
       }
-
-      return stateDelivery;
     }
 
-    if (category === CATEGORY_CONFIG.second) {
-      // нужно добівить обработку порта
-      let stateDelivery: number = 0;
-      for (const state in states) {
+    if (auction === AUCTIONS_CONFIG.aiia) {
+      for (const state in USA_DELIVERY_CONFIG) {
         if (state === county) {
           // @ts-ignore
-          stateDelivery = states[state];
+          const stateDelivery = USA_DELIVERY_CONFIG[state][AUCTIONS_CONFIG.aiia];
+
+          return stateDelivery
         }
       }
-
-      return stateDelivery;
-    }
-
-    if (category === CATEGORY_CONFIG.third) {
-      // нужно добівить обработку порта
-      let stateDelivery: number = 0;
-      for (const state in states) {
-        if (state === county) {
-          // @ts-ignore
-          stateDelivery = states[state];
-        }
-      }
-
-      return stateDelivery;
     }
   }
 
@@ -248,43 +493,13 @@ export const stateDeliveryCalculation = (category: string, map: string, county: 
       'NS': 500,
     }
 
-    if (category === CATEGORY_CONFIG.first) {
-      // нужно добівить обработку порта
-      let stateDelivery: number = 0;
-      for (const state in states) {
-        if (state === county) {
-          // @ts-ignore
-          stateDelivery = states[state];
-        }
+    for (const state in states) {
+      if (state === county) {
+        // @ts-ignore
+        const stateDelivery = states[state];
+
+        return stateDelivery;
       }
-
-      return stateDelivery;
-    }
-
-    if (category === CATEGORY_CONFIG.second) {
-      // нужно добівить обработку порта
-      let stateDelivery: number = 0;
-      for (const state in states) {
-        if (state === county) {
-          // @ts-ignore
-          stateDelivery = states[state];
-        }
-      }
-
-      return stateDelivery;
-    }
-
-    if (category === CATEGORY_CONFIG.third) {
-      // нужно добівить обработку порта
-      let stateDelivery: number = 0;
-      for (const state in states) {
-        if (state === county) {
-          // @ts-ignore
-          stateDelivery = states[state];
-        }
-      }
-
-      return stateDelivery;
     }
   }
 
@@ -292,27 +507,100 @@ export const stateDeliveryCalculation = (category: string, map: string, county: 
 }
 
 
-export const portDelivery = (port: string) => {
-  if (port) {
-    return 800;
+export const portDelivery = (category: string, county: string, port: string) => {
+  if (county && port) {
+    const ports = {
+      NJ: 2200,
+      GA: 2200,
+      TX: 2600,
+      CA: 5600,
+    }
+
+    if (category === CATEGORY_CONFIG.first) {
+      const placeInContainer = 4;
+
+      for (const state in USA_DELIVERY_CONFIG) {
+        if (state === county) {
+          // @ts-ignore
+          const deliveryPort = USA_DELIVERY_CONFIG[state].port;
+
+          for (const port in ports) {
+            if (port === deliveryPort) {
+              // @ts-ignore
+              const deliveryPrice = ports[port] / placeInContainer;
+
+              return deliveryPrice;
+            }
+          }
+        }
+      }
+    }
+
+    if (category === CATEGORY_CONFIG.second) {
+      const placeInContainer = 3;
+
+      for (const state in USA_DELIVERY_CONFIG) {
+        if (state === county) {
+          // @ts-ignore
+          const deliveryPort = USA_DELIVERY_CONFIG[state].port;
+
+          for (const port in ports) {
+            if (port === deliveryPort) {
+              // @ts-ignore
+              const deliveryPrice = ports[port] / placeInContainer;
+
+              return deliveryPrice;
+            }
+          }
+        }
+      }
+    }
+
+    if (category === CATEGORY_CONFIG.third) {
+      const placeInContainer = 2;
+
+      for (const state in USA_DELIVERY_CONFIG) {
+        if (state === county) {
+          // @ts-ignore
+          const deliveryPort = USA_DELIVERY_CONFIG[state].port;
+
+          for (const port in ports) {
+            if (port === deliveryPort) {
+              // @ts-ignore
+              const deliveryPrice = ports[port] / placeInContainer;
+
+              return deliveryPrice;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
-export const deliveryPriceCalculation = (localStateDelivery: number, toPortDelivery: number, documentsDelivery: number, complex: number) => {
+export const releaseContainerAndBroker = (localStateDelivery: number, containerAndBroker: number) => {
+  if (localStateDelivery && containerAndBroker) {
+    const margin = 500;
+    const broker = 50;
+    const containerAndBroker = margin + broker;
+    return containerAndBroker;
+  }
+}
+
+export const deliveryPriceCalculation = (localStateDelivery: number, toPortDelivery: number, containerAndBroker: number, documentsDelivery: number, complex: number) => {
   if (localStateDelivery && toPortDelivery) {
-    const price = localStateDelivery + toPortDelivery + documentsDelivery + complex;
+    const price = localStateDelivery + toPortDelivery + containerAndBroker + documentsDelivery + complex;
 
     return price;
   }
 }
-
-export const clearanceCalculation = (lotCost: string, auction_fee: number) => {
-  if (lotCost && auction_fee) {
-    const margin = 500;
-    const extraMargin = 800;
+// --------------------------------- lotYear
+export const clearanceCalculation = (lotYear:string, lotCost: string, auction_fee: number, localStateDelivery: number, toPortDelivery: number) => {
+  if (lotCost && auction_fee && localStateDelivery && toPortDelivery) {
+    const deliveryToWarsaw = 800;
     const percent = 35;
-    const broker = 40;
-    const clearance = (Number(lotCost) + margin + extraMargin) * (percent / 100) + broker;
+    const forwarder = 40;
+    const clearance = (Number(lotCost) + auction_fee + localStateDelivery + toPortDelivery + deliveryToWarsaw) * (percent / 100) + forwarder;
 
     return clearance;
   }

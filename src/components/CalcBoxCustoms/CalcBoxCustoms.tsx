@@ -1,6 +1,5 @@
 import React from "react";
 import copart from '../../images/calculator/auctions/copart.png';
-// import manheim from '../../images/calculator/auctions/manheim.png';
 import aiia from '../../images/calculator/auctions/aiia.png';
 import cars from '../../images/calculator/cars.png';
 import { AUCTIONS_CONFIG, ENGINE_CONFIG } from "../../framework/calculator";
@@ -149,18 +148,6 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
               <label htmlFor="auction_copart" className="calcBoxCustoms__infoCont__auction__button">
                 <img src={copart} alt="copart" className="calcBoxCustoms__infoCont__auction__button--copart" />
               </label>
-        
-              {/* <input
-                id="auction_manheim"
-                type="radio"
-                name="auction"
-                value={AUCTIONS_CONFIG.manheim}
-                hidden
-                onChange={e => {handleChangeAuction(e.target.value)}}
-              />
-              <label htmlFor="auction_manheim" className="calcBoxCustoms__infoCont__auction__button">
-                <img src={manheim} alt="manheim" className="calcBoxCustoms__infoCont__auction__button--manheim" />
-              </label> */}
 
               <input
                 id="auction_aiia"
@@ -226,71 +213,16 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
         </div>
 
         <div className="calcBoxCustoms__resultsCont">
-          {/* <div className="calcBoxCustoms__resultsCont__box">
-            <p className="calcBoxCustoms__resultsCont__box__name">
-              Вартість лоту
-            </p>
-
-            <p className="calcBoxCustoms__resultsCont__box__cost">
-              {`$${renderLotCost}`}
-            </p>
-          </div> */}
           <CalcBox text="Вартість лоту" value={renderLotCost} />
 
-          {/* <div className="calcBoxCustoms__resultsCont__box">
-            <p className="calcBoxCustoms__resultsCont__box__name">
-              Збори аукціону
-            </p>
-
-            <p className="calcBoxCustoms__resultsCont__box__cost">
-              {`$${auction_fee}`}
-            </p>
-          </div> */}
           <CalcBox text="Збори аукціону" value={auction_fee} />
+
           <CalcBox text="Акциз" value={excise} />
         </div>
 
         <div className="calcBoxCustoms__resultsCont">
-          {/* <div className="calcBoxCustoms__resultsCont__box">
-            <p className="calcBoxCustoms__resultsCont__box__name">
-              Акциз
-            </p>
-
-            <p className="calcBoxCustoms__resultsCont__box__cost">
-              {`$${excise}`}
-            </p>
-          </div> */}
-
-          {/* <div className="calcBoxCustoms__resultsCont__box">
-            <p className="calcBoxCustoms__resultsCont__box__name">
-              Мито
-            </p>
-
-            <p className="calcBoxCustoms__resultsCont__box__percent">
-              10%
-            </p>
-
-            <p className="calcBoxCustoms__resultsCont__box__cost">
-              {`$${impost}`}
-            </p>
-          </div>
-
-          <div className=" calcBoxCustoms__resultsCont__box calcBoxCustoms__resultsCont__box--last">
-            <p className="calcBoxCustoms__resultsCont__box__name">
-              НДС
-            </p>
-
-            <p className="calcBoxCustoms__resultsCont__box__percent">
-              20%
-            </p>
-
-            <p className="calcBoxCustoms__resultsCont__box__cost">
-              {`$${vat}`}
-            </p>
-          </div> */}
-
-          
           <CalcBox text="Страховий внесок" value={insurance} />
+
           <div className="calcBoxCustoms__resultsCont__box">
             <InputRadio
               name="insurance"
@@ -299,7 +231,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
               value="5"
               setValue={setInsurancePercent}
             />
-            
+
             <InputRadio
               name="insurance"
               id="insurance_15"
@@ -316,59 +248,6 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
               setValue={setInsurancePercent}
             />
           </div>
-
-          {/* <span className="calcBoxTotalCost__resultsCont__box"> */}
-            {/* <div>
-            Страховий внесок 
-            </div> */}
-            {/* <span className="calcBoxTotalCost__resultsCont__box__name">
-              <input
-                id="insurance_5"
-                type="radio"
-                name="insurance"
-                value="5"
-                hidden
-              />
-              <label htmlFor="insurance_5" className="calcBoxTotalCost__resultsCont__box__name--lable">
-                <p>
-                  5 % на зовнішні пошкодження
-                </p>
-              </label> */}
-
-              {/* <div className="form__input form__input--last form__input--checkbox checkbox">
-                <input type="radio" name="insurance" id="header_modal_form_checkbox_2" className="checkbox__item" hidden/>
-                <label htmlFor="header_modal_form_checkbox_2" className="checkbox__label">
-                15 % на зовнішні пошкодження, двигун, коробка передач
-                </label>
-              </div> */}
-
-
-
-              {/* <input
-                id="insurance_15"
-                type="radio"
-                name="insurance"
-                value="15"
-                hidden
-                className="checkbox__item"
-              />
-              <label htmlFor="insurance_15" className="checkbox__label">
-                <p>
-                  15 % на зовнішні пошкодження, двигун, коробка передач
-                </p>
-              </label> */}
-
-
-            {/* </span> */}
-
-            {/* <p className="calcBoxTotalCost__resultsCont__box__percent">
-              5%
-            </p> */}
-
-            {/* <p className="calcBoxTotalCost__resultsCont__box__cost">
-              $0.00
-            </p> */}
-          {/* </span> */}
         </div>
       </div>
 

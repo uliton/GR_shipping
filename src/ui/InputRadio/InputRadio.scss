@@ -5,8 +5,7 @@
   line-height: 130%;
   color: #000000;
   margin-bottom: 4px;
-  // margin-left: 40px;
-  
+
   &__input {
     &--selected + .input__radio__box__label::after {
       opacity: 1;

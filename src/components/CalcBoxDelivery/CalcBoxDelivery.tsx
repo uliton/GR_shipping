@@ -15,6 +15,7 @@ type Props = {
   port: string,
   localStateDelivery: string,
   toPortDelivery: string,
+  containerAndBroker: string,
   documentsDelivery: string,
   complex: string,
   totalDeliveryPrice: string,
@@ -24,17 +25,9 @@ type Props = {
   setPort: (_: string) => void,
 }
 
-export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localStateDelivery, toPortDelivery, documentsDelivery, complex, totalDeliveryPrice, setCategory, setCounty, setMap, setPort }) => {
-  // const [category, setCategory] = useState("first");
+export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localStateDelivery, toPortDelivery, containerAndBroker, documentsDelivery, complex, totalDeliveryPrice, setCategory, setCounty, setMap, setPort }) => {
   const [categoryImage, setCategoryImage] = useState(category_1);
-  // const [county, setCounty] = useState('');
-  // const [map, setMap] = useState("usa");
   const [mapComponent, setMapComponent] = useState(<MapUSA setCounty={setCounty} />);
-  // const [port, setPort] = useState('');
-
-  // console.log(`category - ${category} |`, `county - ${county || 'not choosen'} |`, `port - ${port || 'not choosen'}`);
-  console.log(toPortDelivery);
-  
 
   const handleChangeCategory = (value: string) => {
     if (value === CATEGORY_CONFIG.first) {
@@ -227,6 +220,8 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
           <CalcBox text={`Доставка з аукціону до порту в ${map === MAP_CONFIG.usa ? "Америці" : "Канаді"}`} value={localStateDelivery} />
 
           <CalcBox text="Доставка у порт призначення" value={+localStateDelivery ? toPortDelivery : "0.00"} />
+
+          <CalcBox text="Загрузка, вигрузка контейнера + Брокер" value={containerAndBroker} />
         </div>
 
         <div className="calcBoxDelivery__resultsCont">
