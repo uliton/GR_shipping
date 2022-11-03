@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.5b028f2e.css",
-    "main.js": "./static/js/main.d5ce44c5.js",
+    "main.css": "./static/css/main.745b7f24.css",
+    "main.js": "./static/js/main.73ee922c.js",
     "static/media/header_background.png": "./static/media/header_background.0a4296ed70be927f7ba0.png",
     "static/media/Gilroy-UltraLightItalic.ttf": "./static/media/Gilroy-UltraLightItalic.87f0acd42b27a5408e0b.ttf",
     "static/media/Gilroy-ThinItalic.ttf": "./static/media/Gilroy-ThinItalic.930dc405dc78cc97a766.ttf",
@@ -27,16 +27,15 @@
     "static/media/category_2.png": "./static/media/category_2.82174da8a8e5494fd2b7.png",
     "static/media/category_1.png": "./static/media/category_1.251ca9a7fb3991d70be1.png",
     "static/media/category_3.png": "./static/media/category_3.e839283da234b58a7c32.png",
-    "static/media/map.png": "./static/media/map.36b7c5bd80e09aa8cb0f.png",
     "static/media/dream_icon.png": "./static/media/dream_icon.51d2a681ca3f8159f754.png",
     "static/media/canada_icon.png": "./static/media/canada_icon.ae98d93f408005dc4c0a.png",
     "index.html": "./index.html",
     "static/media/modal_exit_icon.svg": "./static/media/modal_exit_icon.71fbbbb0659ff58ddf6bf7b08c82dfc0.svg",
-    "main.5b028f2e.css.map": "./static/css/main.5b028f2e.css.map",
-    "main.d5ce44c5.js.map": "./static/js/main.d5ce44c5.js.map"
+    "main.745b7f24.css.map": "./static/css/main.745b7f24.css.map",
+    "main.73ee922c.js.map": "./static/js/main.73ee922c.js.map"
   },
   "entrypoints": [
-    "static/css/main.5b028f2e.css",
-    "static/js/main.d5ce44c5.js"
+    "static/css/main.745b7f24.css",
+    "static/js/main.73ee922c.js"
   ]
 }
