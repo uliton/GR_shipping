@@ -14,8 +14,13 @@
     gap: 50px;
   }
 
+  &__resultsCont {
+    padding-right: 60px;
+  }
+
   &__footer {
     background: #F2F2F2;
+    
     &__box {
       display: flex;
       justify-content: space-between;
