@@ -350,31 +350,39 @@ export const auctionTaxCalculation = (lotCost: string, auction: string) => {
 
 
 // excise
-export const exciseCalculation = (lotCost: string, auctionFee: number, engine: string, lotEngineVolume: string) => {
+export const exciseCalculation = (lotYear: string, lotCost: string, auctionFee: number, engine: string, lotEngineVolume: string) => {
+  if (lotYear) {
+    const lotAge = new Date().getFullYear() - Number(lotYear);
+
+    if (lotAge >= 25) {
+      return 0;
+    }
+  }
+
   if (lotCost && auctionFee && engine === ENGINE_CONFIG.electro) {
     return 0;
   }
 
   if (lotCost && auctionFee && engine && lotEngineVolume) {
     if (engine === ENGINE_CONFIG.petrol || engine === ENGINE_CONFIG.disel) {
-      if (Number(lotEngineVolume) < 2) {
+      if (Number(lotEngineVolume) < 2000) {
         const excise: number = (Number(lotCost) + auctionFee) * 0.031;
         return excise;
       }
 
-      if (Number(lotEngineVolume) >= 2) {
+      if (Number(lotEngineVolume) >= 2000) {
         const excise: number = (Number(lotCost) + auctionFee) * 0.186;
         return excise;
       }
     }
 
     if (engine === ENGINE_CONFIG.hybrid) {
-      if (Number(lotEngineVolume) < 2) {
+      if (Number(lotEngineVolume) < 2000) {
         const excise: number = (Number(lotCost) + auctionFee) * 0.0155;
         return excise;
       }
 
-      if (Number(lotEngineVolume) >= 2) {
+      if (Number(lotEngineVolume) >= 2000) {
         const excise: number = (Number(lotCost) + auctionFee) * 0.093;
         return excise;
       }
@@ -550,13 +558,25 @@ export const deliveryPriceCalculation = (localStateDelivery: number, toPortDeliv
 
 // --------------------------------- lotYear
 export const clearanceCalculation = (lotYear:string, lotCost: string, auction_fee: number, localStateDelivery: number, toPortDelivery: number) => {
-  if (lotCost && auction_fee && localStateDelivery && toPortDelivery) {
+  if (lotYear && lotCost && auction_fee && localStateDelivery && toPortDelivery) {
+    const lotAge = new Date().getFullYear() - Number(lotYear);
+    const coefficient = 0.9778;
     const deliveryToWarsaw = 700;
-    const percent = 35;
-    const forwarder = 40;
-    const clearance = (Number(lotCost) + auction_fee + localStateDelivery + toPortDelivery + deliveryToWarsaw) * (percent / 100) + forwarder;
+    const forwarder = 120;
 
-    return clearance;
+    if (lotAge < 25) {
+      const percent = 35;
+      const clearance = ((Number(lotCost) + auction_fee + localStateDelivery + toPortDelivery) / coefficient + deliveryToWarsaw) * (percent / 100) + forwarder;
+  
+      return clearance;
+    }
+
+    if (lotAge >= 25) {
+      const percent = 8;
+      const clearance = (Number(lotCost) + localStateDelivery + toPortDelivery + deliveryToWarsaw) * (percent / 100) + forwarder;
+  
+      return clearance;
+    }
   }
 }
 

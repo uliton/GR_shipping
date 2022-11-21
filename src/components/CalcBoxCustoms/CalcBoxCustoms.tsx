@@ -25,7 +25,7 @@ type Props = {
 export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVolume, auction_fee, excise, insurance, totalCustomsPrice, setEngine, setAuction, setLotYear, setLotCost, setLotEngineVolume, setInsurancePercent }) => {
   const renderLotCost = (lotCost || '0') + '.00';
   const integer = '1234567890';
-  const whole = integer + '.';
+  // const whole = integer + '.';
 
   const handleChangeEngine = (e: string) => {
     setEngine(e);
@@ -56,7 +56,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
   }
 
   const handeChangeLotEngineVolume = (e: string) => {
-    if (whole.includes(e[e.length - 1])) {
+    if (integer.includes(e[e.length - 1])) {
       setLotEngineVolume(e);
     }
 
@@ -199,7 +199,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
 
               <input
                 type="text"
-                placeholder="2.6"
+                placeholder="2475"
                 className="calcBoxCustoms__infoCont__addition__box__input"
                 value={lotEngineVolume}
                 onChange={e => handeChangeLotEngineVolume(e.target.value)}

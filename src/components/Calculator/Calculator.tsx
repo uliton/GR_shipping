@@ -12,7 +12,7 @@ export const Calculator: React.FC = () => {
   const [lotCost, setLotCost] = useState<string>('');
   const [lotEngineVolume, setLotEngineVolume] = useState<string>('');
   const auction_fee: number = auctionTaxCalculation(lotCost, auction) || 0;
-  const excise: number = exciseCalculation(lotCost, auction_fee, engine, lotEngineVolume) || 0;
+  const excise: number = exciseCalculation(lotYear, lotCost, auction_fee, engine, lotEngineVolume) || 0;
   const [insurancePercent, setInsurancePercent] = useState('');
   const insurance: number = insuranceCalculation(lotCost, auction_fee, insurancePercent) || 0;
 
