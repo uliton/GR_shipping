@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from 'react-router';
 import { Header } from "./components/Header";
 import { Calculator } from "./components/Calculator";
-// import { Navigation } from "./components/Navigation";
+import { Navigation } from "./components/Navigation";
 
 import { Test } from "./components/Test/Test";
 // import { useSelector } from "react-redux";
@@ -13,7 +13,7 @@ export const App: React.FC = () => {
   
   return (
     <div className="app">
-      {/* <Navigation /> */}
+      <Navigation />
 
       <Routes>
         <Route path="/" element={<Header />} />

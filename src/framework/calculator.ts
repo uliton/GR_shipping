@@ -283,6 +283,7 @@ const USA_DELIVERY_CONFIG = {
   }, //по замовленню
 }
 
+
 // auctions fee
 export const auctionTaxCalculation = (lotCost: string, auction: string) => {
   const cost = Number(lotCost);
@@ -395,61 +396,8 @@ export const insuranceCalculation = (lotCost: string, auction_fee: number, perce
 // locale state delivery
 export const stateDeliveryCalculation = (auction: string, map: string, county: string) => {
   
+  // USA
   if (map === MAP_CONFIG.usa) {
-    // const states = {
-    //   'AL': 425,
-    //   'AR': 500,
-    //   'AZ': 350,
-    //   'CA': 275,
-    //   'CO': 675,
-    //   'CT': 300,
-    //   'DE': 300,
-    //   'FL': 250,
-    //   'GA': 250,
-    //   'IA': 700,
-    //   'ID': 850,
-    //   'IL': 575,
-    //   'IN': 600,
-    //   'KS': 575,
-    //   'KY': 625,
-    //   'LA': 375,
-    //   'MA': 375,
-    //   'MD': 325,
-    //   'ME': 475,
-    //   'MI': 675,
-    //   'MN': 700,
-    //   'MO': 675,
-    //   'MS': 475,
-    //   'MT': 1100,
-    //   'NC': 325,
-    //   'ND': 1150,
-    //   'NE': 700,
-    //   'NH': 425,
-    //   'NJ': 175,
-    //   'NM': 675,
-    //   'NV': 400,
-    //   'NY': 275,
-    //   'OH': 500,
-    //   'OK': 450,
-    //   'OR': 600,
-    //   'PA': 250,
-    //   'RI': 375,
-    //   'SC': 325,
-    //   'SD': 1200,
-    //   'TN': 475,
-    //   'TX': 175,
-    //   'UT': 550,
-    //   'VA': 400,
-    //   'VT': 550,
-    //   'WA': 675,
-    //   'WI': 675,
-    //   'WV': 575,
-    //   'WY': 0, //чекаю
-    //   'DC': 0, //чекаю
-    //   'AK': 0, //по замовленню
-    //   'HI': 0, //по замовленню
-    // }
-
     if (auction === AUCTIONS_CONFIG.copart) {
       for (const state in USA_DELIVERY_CONFIG) {
         if (state === county) {
@@ -473,9 +421,7 @@ export const stateDeliveryCalculation = (auction: string, map: string, county: s
     }
   }
 
-
-
-
+  // CANADA
   if (map === MAP_CONFIG.canada) {
     const states = {
       'YT': 500,
@@ -516,6 +462,7 @@ export const portDelivery = (category: string, county: string, port: string) => 
       CA: 5600,
     }
 
+    // first category
     if (category === CATEGORY_CONFIG.first) {
       const placeInContainer = 4;
 
@@ -536,6 +483,7 @@ export const portDelivery = (category: string, county: string, port: string) => 
       }
     }
 
+    // second category
     if (category === CATEGORY_CONFIG.second) {
       const placeInContainer = 3;
 
@@ -556,6 +504,7 @@ export const portDelivery = (category: string, county: string, port: string) => 
       }
     }
 
+    // third category
     if (category === CATEGORY_CONFIG.third) {
       const placeInContainer = 2;
 
@@ -578,6 +527,7 @@ export const portDelivery = (category: string, county: string, port: string) => 
   }
 }
 
+
 export const releaseContainerAndBroker = (localStateDelivery: number, containerAndBroker: number) => {
   if (localStateDelivery && containerAndBroker) {
     const margin = 500;
@@ -587,6 +537,8 @@ export const releaseContainerAndBroker = (localStateDelivery: number, containerA
   }
 }
 
+
+// total delivery price
 export const deliveryPriceCalculation = (localStateDelivery: number, toPortDelivery: number, containerAndBroker: number, documentsDelivery: number, complex: number) => {
   if (localStateDelivery && toPortDelivery) {
     const price = localStateDelivery + toPortDelivery + containerAndBroker + documentsDelivery + complex;
@@ -595,10 +547,11 @@ export const deliveryPriceCalculation = (localStateDelivery: number, toPortDeliv
   }
 }
 
+
 // --------------------------------- lotYear
 export const clearanceCalculation = (lotYear:string, lotCost: string, auction_fee: number, localStateDelivery: number, toPortDelivery: number) => {
   if (lotCost && auction_fee && localStateDelivery && toPortDelivery) {
-    const deliveryToWarsaw = 800;
+    const deliveryToWarsaw = 700;
     const percent = 35;
     const forwarder = 40;
     const clearance = (Number(lotCost) + auction_fee + localStateDelivery + toPortDelivery + deliveryToWarsaw) * (percent / 100) + forwarder;
