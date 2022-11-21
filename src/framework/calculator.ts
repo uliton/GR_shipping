@@ -37,13 +37,13 @@ const USA_DELIVERY_CONFIG = {
     port: 'TX',
   },
   'AZ': {
-    copart: 350,
-    aiia: 350,
+    copart: 400,
+    aiia: 400,
     port: 'CA',
   },
   'CA': {
-    copart: 275,
-    aiia: 275,
+    copart: 425,
+    aiia: 425,
     port: 'CA',
   },
   'CO': {
@@ -62,13 +62,13 @@ const USA_DELIVERY_CONFIG = {
     port: 'NJ',
   },
   'FL': {
-    copart: 250,
-    aiia: 250,
+    copart: 325,
+    aiia: 325,
     port: 'GA',
   },
   'GA': {
-    copart: 200,
-    aiia: 200,
+    copart: 350,
+    aiia: 350,
     port: 'GA',
   },
   'IA': {
@@ -147,8 +147,8 @@ const USA_DELIVERY_CONFIG = {
     port: 'CA',
   },
   'NC': {
-    copart: 325,
-    aiia: 325,
+    copart: 350,
+    aiia: 350,
     port: 'GA',
   },
   'ND': {
@@ -168,7 +168,7 @@ const USA_DELIVERY_CONFIG = {
   },
   'NJ': {
     copart: 200,
-    aiia: 175,
+    aiia: 225,
     port: 'NJ',
   },
   'NM': {
@@ -177,13 +177,13 @@ const USA_DELIVERY_CONFIG = {
     port: 'TX',
   },
   'NV': {
-    copart: 400,
-    aiia: 400,
+    copart: 440,
+    aiia: 440,
     port: 'CA',
   },
   'NY': {
-    copart: 275,
-    aiia: 275,
+    copart: 375,
+    aiia: 375,
     port: 'NJ',
   },
   'OH': {
@@ -202,8 +202,8 @@ const USA_DELIVERY_CONFIG = {
     port: 'CA',
   },
   'PA': {
-    copart: 250,
-    aiia: 250,
+    copart: 350,
+    aiia: 350,
     port: 'NJ',
   },
   'RI': {
@@ -227,8 +227,8 @@ const USA_DELIVERY_CONFIG = {
     port: 'GA',
   },
   'TX': {
-    copart: 175,
-    aiia: 175,
+    copart: 350,
+    aiia: 350,
     port: 'TX',
   },
   'UT': {
@@ -237,8 +237,8 @@ const USA_DELIVERY_CONFIG = {
     port: 'CA',
   },
   'VA': {
-    copart: 400,
-    aiia: 400,
+    copart: 425,
+    aiia: 425,
     port: 'NJ',
   },
   'VT': {
@@ -247,8 +247,8 @@ const USA_DELIVERY_CONFIG = {
     port: 'NJ',
   },
   'WA': {
-    copart: 675,
-    aiia: 675,
+    copart: 740,
+    aiia: 740,
     port: 'CA',
   },
   'WI': {
