@@ -29,7 +29,8 @@ export const Calculator: React.FC = () => {
   const totalCustomsPrice: number = (Number(lotCost) + auction_fee + excise + insurance) || 0;
   const totalDeliveryPrice: number = deliveryPriceCalculation(localStateDelivery, toPortDelivery, containerAndBroker, documentsDelivery, complex) || 0;
   const clearance: number = clearanceCalculation(lotYear, lotCost, auction_fee, localStateDelivery, toPortDelivery) || 0;
-  const total: number = totalCalculation(totalCustomsPrice, totalDeliveryPrice, clearance) || 0;
+  const informService = 600;
+  const total: number = totalCalculation(totalCustomsPrice, totalDeliveryPrice, clearance, informService) || 0;
   
   return (
     <div className="calculator">
@@ -71,7 +72,9 @@ export const Calculator: React.FC = () => {
         lotCost={lotCost}
         auction_fee={auction_fee.toFixed(2)}
         totalDeliveryPrice={totalDeliveryPrice.toFixed(2)}
+        informService={informService}
         clearance={clearance.toFixed(2)}
+        excise={excise.toFixed(2)}
         total={total.toFixed(2)}
       />
     </div>

@@ -594,6 +594,7 @@ export const deliveryPriceCalculation = (localStateDelivery: number, toPortDeliv
     return price;
   }
 }
+
 // --------------------------------- lotYear
 export const clearanceCalculation = (lotYear:string, lotCost: string, auction_fee: number, localStateDelivery: number, toPortDelivery: number) => {
   if (lotCost && auction_fee && localStateDelivery && toPortDelivery) {
@@ -606,9 +607,10 @@ export const clearanceCalculation = (lotYear:string, lotCost: string, auction_fe
   }
 }
 
-export const totalCalculation = (totalCustomsPrice: number, totalDeliveryPrice: number, clearance: number) => {
+export const totalCalculation = (totalCustomsPrice: number, totalDeliveryPrice: number, clearance: number, informService: number) => {
   if (totalCustomsPrice && totalDeliveryPrice && clearance) {
-    const total = totalCustomsPrice + totalDeliveryPrice + clearance;
+    const bruttoInformService = informService * 1.23;
+    const total = totalCustomsPrice + totalDeliveryPrice + clearance + bruttoInformService;
 
     return total;
   }
