@@ -2,32 +2,34 @@ import React from "react";
 
 export const CalcHeader: React.FC = () => {
   return (
-    <div className="calculator__header calcH">
-      <p className="calcH__location">
-        Головна
-      </p>
-
-      <div className="calcH__form">
-        <p className="calcH__form__title">
-          Вставте посилання з Copart або IAAI:
+    <div className="container">
+      <div className="calculator__header calcH">
+        <p className="calcH__location">
+          Головна
         </p>
 
-        <div className="calcH__form__container">
-          <input
-            type="text"
-            placeholder="https://www.copart.com/lot/50811178"
-            className="calcH__form__container__input"
-          />
+        <div className="calcH__form">
+          <p className="calcH__form__title">
+            Вставте посилання з Copart або IAAI:
+          </p>
 
-          <button type="button" className="calcH__form__container__button">
-            Сканувати
-          </button>
+          <div className="calcH__form__container">
+            <input
+              type="text"
+              placeholder="https://www.copart.com/lot/50811178"
+              className="calcH__form__container__input"
+            />
+
+            <button type="button" className="calcH__form__container__button">
+              Сканувати
+            </button>
+          </div>
         </div>
-      </div>
 
-      <p className="calcH__footer">
-        Або введіть дані самостійно:
-      </p>
+        <p className="calcH__footer">
+          Або введіть дані самостійно:
+        </p>
+      </div>
     </div>
   );
 };

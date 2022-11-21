@@ -13,7 +13,7 @@ export const App: React.FC = () => {
   
   return (
     <div className="app">
-      <Navigation />
+      {/* <Navigation /> */}
 
       <Routes>
         <Route path="/" element={<Header />} />
