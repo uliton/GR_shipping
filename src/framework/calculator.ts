@@ -562,7 +562,7 @@ export const deliveryPriceCalculation = (localStateDelivery: number, toPortDeliv
 export const clearanceCalculation = (lotYear:string, lotCost: string, auction_fee: number, localStateDelivery: number, toPortDelivery: number) => {
   if (lotYear && lotCost && auction_fee && localStateDelivery && toPortDelivery) {
     const lotAge = new Date().getFullYear() - Number(lotYear);
-    const coefficient = 0.9778; // was 0.9778
+    const coefficient = 1; // was 0.9778
     const deliveryToWarsaw = 700;
     const forwarder = 120;
 

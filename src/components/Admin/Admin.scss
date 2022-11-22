@@ -1,0 +1,33 @@
+.admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 150px;
+
+  &__input {
+    width: 300px;
+    height: 40px;
+    padding: 4px 8px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    border: 1px solid #880027;
+    border-radius: 8px;
+    color: #FFF;
+    background-color: #880027;
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid #880027;
+      background: #FFF;
+      color: #880027;
+    }
+  }
+}

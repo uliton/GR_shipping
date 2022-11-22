@@ -1,0 +1,134 @@
+{
+  
+    "ukrainian": {
+      "CalcHeader": {
+        "location": "Головна",
+        "form__title": "Вставте посилання з Copart або IAAI:",
+        "form__container__button": "Сканувати",
+        "footer": "Або введіть дані самостійно:"
+      },
+      "CalcBoxCustoms": {
+        "title": "Калькулятор розмитнення",
+        "engine__title": "Двигун:",
+        "engine__button__petrol": "Бензин",
+        "engine__button__diesel": "Дизель",
+        "engine__button__hybrid": "Гібрид",
+        "engine__button__electro": "Електро",
+        "auction__title": "Аукціон:",
+        "addition__box__title__year": "Рік випуску:",
+        "addition__box__title__price": "Вартість:",
+        "addition__box__title__engine__volume": "Об'єм двигуна:",
+        "calc__box__price": "Вартість лоту",
+        "calc__box__auction__fee": "Збори аукціону",
+        "calc__box__insurance": "Страховий внесок",
+        "insurance__5": "5 % на зовнішні пошкодження",
+        "insurance__15": "15 % на зовнішні пошкодження, двигун, коробка передач",
+        "insurance__0": "без страхового внеску",
+        "footer": "Сума платежів"
+      },
+      "CalcBoxDelivery": {
+        "title": "Калькулятор доставки",
+        "category__title": "Кузов:",
+        "category__1__button__title": "І категорія",
+        "category__1__button__text": "седан хетчбек універсал",
+        "category__2__button__title": "ІІ категорія",
+        "category__2__button__text": "кросовер позашляховик мінівен",
+        "category__3__button__title": "ІІІ категорія",
+        "category__3__button__text": "пікап мікроавтобус та ін.",
+        "map__title": "Штат аукціону:",
+        "map__button__usa": "США",
+        "map__button__canada": "Канада",
+        "port__title": "Порт доставки:",
+        "port__country__german": "Німеччина",
+        "port__city__german": "(Бремен)",
+        "port__country__poland": "Польща",
+        "port__city__poland": "(Варшава)",
+        "calc__box__local__divivery": "Доставка з аукціону до порту в",
+        "calc__box__local__divivery__usa": "Америці",
+        "calc__box__local__divivery__canada": "Канаді",
+        "calc__box__divivery__to__port": "Доставка у порт призначення",
+        "calc__box__divivery__container__and__broker": "Загрузка, вигрузка контейнера + Брокер",
+        "calc__box__divivery__documents": "Доставка документів",
+        "calc__box__divivery__complex__service": "Комплексні послуги",
+        "footer": "Вартість доставки"
+      },
+      "CalcBoxTotalCost": {
+        "title": "Загальна сума",
+        "calc__box__price__and__fee": "Вартість лоту + збір аукціону",
+        "calc__box__delivery__price": "Вартість доставки",
+        "calc__box__info__service__price": "Інформаційні послуги",
+        "calc__box__clearance__price": "Розмитнення",
+        "calc__box__excise__price": "Акциза",
+        "footer__box__title": "Підсумкова вартість з усіма платежами",
+        "footer__button__verify": "Перевірити авто",
+        "footer__button__buy": "КУПИТИ АВТО"
+      }
+    },
+  
+  
+    "polska": {
+      "CalcHeader": {
+        "location": "Główny",
+        "form__title": "Wklej link z Copart lub IAAI:",
+        "form__container__button": "Skanowanie",
+        "footer": "Lub wprowadź dane samodzielnie:"
+      },
+      "CalcBoxCustoms": {
+        "title": "Kalkulator odpraw celnych",
+        "engine__title": "Silnik:",
+        "engine__button__petrol": "Benzyna",
+        "engine__button__diesel": "Diesel",
+        "engine__button__hybrid": "Hybrydowy",
+        "engine__button__electro": "Elektro",
+        "auction__title": "Aukcja:",
+        "addition__box__title__year": "Rok:",
+        "addition__box__title__price": "Koszt:",
+        "addition__box__title__engine__volume": "Pojemność silnika:",
+        "calc__box__price": "Wartość partii",
+        "calc__box__auction__fee": "Opłaty aukcyjne",
+        "calc__box__insurance": "Składka ubezpieczeniowa",
+        "insurance__5": "5% na uszkodzenia zewnętrzne",
+        "insurance__15": "15% na uszkodzenia zewnętrzne, silnik, skrzynia biegów",
+        "insurance__0": "bez składki ubezpieczeniowej",
+        "footer": "Kwota płatności"
+      },
+      "CalcBoxDelivery": {
+        "title": "Kalkulator dostawy",
+        "category__title": "Ciało:",
+        "category__1__button__title": "І kategoria",
+        "category__1__button__text": "sedan hatchback kombi",
+        "category__2__button__title": "ІІ kategoria",
+        "category__2__button__text": "crossover SUV minivan",
+        "category__3__button__title": "ІІІ kategoria",
+        "category__3__button__text": "minibus odbioru itp.",
+        "map__title": "Stan aukcji:",
+        "map__button__usa": "USA",
+        "map__button__canada": "Kanada",
+        "port__title": "Przystań:",
+        "port__country__german": "Niemcy",
+        "port__city__german": "(Brema)",
+        "port__country__poland": "Polska",
+        "port__city__poland": "(Warszawa)",
+        "calc__box__local__divivery": "Dostawa z aukcji do portu w",
+        "calc__box__local__divivery__usa": "Ameryce",
+        "calc__box__local__divivery__canada": "Kanadzie",
+        "calc__box__divivery__to__port": "Dostawa do portu docelowego",
+        "calc__box__divivery__container__and__broker": "Załadunek i rozładunek kontenerów + Broker",
+        "calc__box__divivery__documents": "Dostawa dokumentów",
+        "calc__box__divivery__complex__service": "Kompleksowe usługi",
+        "footer": "Koszty wysyłki"
+      },
+      "CalcBoxTotalCost": {
+        "title": "Całkowity",
+        "calc__box__price__and__fee": "Cena przedmiotu + opłata aukcyjna",
+        "calc__box__delivery__price": "Koszty wysyłki",
+        "calc__box__info__service__price": "Usługi informacyjne",
+        "calc__box__clearance__price": "Odprawa celna",
+        "calc__box__excise__price": "Podatek akcyzowy",
+        "footer__box__title": "Cena końcowa ze wszystkimi płatnościami",
+        "footer__button__verify": "Sprawdź samochód",
+        "footer__button__buy": "KUPIĆ SAMOCHÓD"
+      }
+    }
+  
+}

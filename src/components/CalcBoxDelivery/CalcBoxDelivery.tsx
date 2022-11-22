@@ -252,7 +252,7 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
         </p>
 
         <p>
-          {`$${(+localStateDelivery && +toPortDelivery && documentsDelivery && complex && +totalDeliveryPrice)}.00`}
+          {`$${totalDeliveryPrice}`}
         </p>
       </div>
     </div>
