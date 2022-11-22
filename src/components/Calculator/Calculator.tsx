@@ -3,7 +3,7 @@ import { CalcHeader } from "../CalcHeader";
 import { CalcBoxCustoms } from "../CalcBoxCustoms";
 import { CalcBoxDelivery } from "../CalcBoxDelivery";
 import { CalcBoxTotalCost } from "../CalcBoxTotalCost";
-import { auctionTaxCalculation, clearanceCalculation, deliveryPriceCalculation, /*exciseCalculation,*/ insuranceCalculation, portDelivery, releaseContainerAndBroker, stateDeliveryCalculation, totalCalculation } from "../../framework/calculator";
+import { auctionTaxCalculation, clearanceCalculation, deliveryPriceCalculation, exciseCalculation, insuranceCalculation, portDelivery, releaseContainerAndBroker, stateDeliveryCalculation, totalCalculation } from "../../framework/calculator";
 
 export const Calculator: React.FC = () => {
   const [engine, setEngine] = useState<string>('');
@@ -12,7 +12,7 @@ export const Calculator: React.FC = () => {
   const [lotCost, setLotCost] = useState<string>('');
   const [lotEngineVolume, setLotEngineVolume] = useState<string>('');
   const auction_fee: number = auctionTaxCalculation(lotCost, auction) || 0;
-  // const excise: number = exciseCalculation(lotYear, lotCost, auction_fee, engine, lotEngineVolume) || 0;
+  const excise: number = exciseCalculation(lotYear, lotCost, auction_fee, engine, lotEngineVolume) || 0;
   const [insurancePercent, setInsurancePercent] = useState('');
   const insurance: number = insuranceCalculation(lotCost, auction_fee, insurancePercent) || 0;
 
@@ -74,7 +74,7 @@ export const Calculator: React.FC = () => {
         totalDeliveryPrice={totalDeliveryPrice.toFixed(2)}
         informService={informService}
         clearance={clearance.toFixed(2)}
-        // excise={excise.toFixed(2)}
+        excise={excise.toFixed(2)}
         total={total.toFixed(2)}
       />
     </div>

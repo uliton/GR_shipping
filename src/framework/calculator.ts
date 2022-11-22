@@ -350,45 +350,45 @@ export const auctionTaxCalculation = (lotCost: string, auction: string) => {
 
 
 // excise
-// export const exciseCalculation = (lotYear: string, lotCost: string, auctionFee: number, engine: string, lotEngineVolume: string) => {
-//   if (lotYear) {
-//     const lotAge = new Date().getFullYear() - Number(lotYear);
+export const exciseCalculation = (lotYear: string, lotCost: string, auctionFee: number, engine: string, lotEngineVolume: string) => {
+  if (lotYear) {
+    const lotAge = new Date().getFullYear() - Number(lotYear);
 
-//     if (lotAge >= 25) {
-//       return 0;
-//     }
-//   }
+    if (lotAge >= 25) {
+      return 0;
+    }
+  }
 
-//   if (lotCost && auctionFee && engine === ENGINE_CONFIG.electro) {
-//     return 0;
-//   }
+  if (lotCost && auctionFee && engine === ENGINE_CONFIG.electro) {
+    return 0;
+  }
 
-//   if (lotCost && auctionFee && engine && lotEngineVolume) {
-//     if (engine === ENGINE_CONFIG.petrol || engine === ENGINE_CONFIG.disel) {
-//       if (Number(lotEngineVolume) < 2000) {
-//         const excise: number = (Number(lotCost) + auctionFee) * 0.031;
-//         return excise;
-//       }
+  if (lotCost && auctionFee && engine && lotEngineVolume) {
+    if (engine === ENGINE_CONFIG.petrol || engine === ENGINE_CONFIG.disel) {
+      if (Number(lotEngineVolume) < 2000) {
+        const excise: number = (Number(lotCost) + auctionFee) * 0.031;
+        return excise;
+      }
 
-//       if (Number(lotEngineVolume) >= 2000) {
-//         const excise: number = (Number(lotCost) + auctionFee) * 0.186;
-//         return excise;
-//       }
-//     }
+      if (Number(lotEngineVolume) >= 2000) {
+        const excise: number = (Number(lotCost) + auctionFee) * 0.186;
+        return excise;
+      }
+    }
 
-//     if (engine === ENGINE_CONFIG.hybrid) {
-//       if (Number(lotEngineVolume) < 2000) {
-//         const excise: number = (Number(lotCost) + auctionFee) * 0.0155;
-//         return excise;
-//       }
+    if (engine === ENGINE_CONFIG.hybrid) {
+      if (Number(lotEngineVolume) < 2000) {
+        const excise: number = (Number(lotCost) + auctionFee) * 0.0155;
+        return excise;
+      }
 
-//       if (Number(lotEngineVolume) >= 2000) {
-//         const excise: number = (Number(lotCost) + auctionFee) * 0.093;
-//         return excise;
-//       }
-//     }
-//   }
-// }
+      if (Number(lotEngineVolume) >= 2000) {
+        const excise: number = (Number(lotCost) + auctionFee) * 0.093;
+        return excise;
+      }
+    }
+  }
+}
 
 
 // insurance
