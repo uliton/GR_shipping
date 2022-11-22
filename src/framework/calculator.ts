@@ -291,7 +291,8 @@ export const auctionTaxCalculation = (lotCost: string, auction: string) => {
   if (auction) {
     const fixFee = 79;
     const extraFee = 10;
-    const minCost = fixFee + extraFee;
+    const hidenTax = 50;
+    const minCost = fixFee + extraFee + hidenTax;
   
     const costFee = {
       '99.99': 1,
@@ -560,7 +561,7 @@ export const deliveryPriceCalculation = (localStateDelivery: number, toPortDeliv
 export const clearanceCalculation = (lotYear:string, lotCost: string, auction_fee: number, localStateDelivery: number, toPortDelivery: number) => {
   if (lotYear && lotCost && auction_fee && localStateDelivery && toPortDelivery) {
     const lotAge = new Date().getFullYear() - Number(lotYear);
-    const coefficient = 0.9778;
+    const coefficient = 0.9778; // was 0.9778
     const deliveryToWarsaw = 700;
     const forwarder = 120;
 
