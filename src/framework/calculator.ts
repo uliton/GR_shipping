@@ -582,8 +582,8 @@ export const clearanceCalculation = (lotYear:string, lotCost: string, auction_fe
 
 export const totalCalculation = (totalCustomsPrice: number, totalDeliveryPrice: number, clearance: number, informService: number) => {
   if (totalCustomsPrice && totalDeliveryPrice && clearance) {
-    const bruttoInformService = informService * 1.23;
-    const total = totalCustomsPrice + totalDeliveryPrice + clearance + bruttoInformService;
+    // const bruttoInformService = informService * 1.23;
+    const total = totalCustomsPrice + totalDeliveryPrice + clearance + informService;
 
     return total;
   }
