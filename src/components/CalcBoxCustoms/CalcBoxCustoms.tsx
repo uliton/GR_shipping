@@ -11,7 +11,7 @@ type Props = {
   lotCost: string,
   lotEngineVolume: string,
   auction_fee: string,
-  excise: string,
+  // excise: string,
   insurance: string,
   totalCustomsPrice: string,
   setEngine: (_: string) => void,
@@ -22,7 +22,7 @@ type Props = {
   setInsurancePercent: (_: string) => void,
 }
 
-export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVolume, auction_fee, excise, insurance, totalCustomsPrice, setEngine, setAuction, setLotYear, setLotCost, setLotEngineVolume, setInsurancePercent }) => {
+export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVolume, auction_fee, /*excise,*/ insurance, totalCustomsPrice, setEngine, setAuction, setLotYear, setLotCost, setLotEngineVolume, setInsurancePercent }) => {
   const renderLotCost = (lotCost || '0') + '.00';
   const integer = '1234567890';
   // const whole = integer + '.';
@@ -217,7 +217,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
 
           <CalcBox text="Збори аукціону" value={auction_fee} />
 
-          <CalcBox text="Акциз" value={excise} />
+          {/* <CalcBox text="Акциз" value={excise} /> */}
         </div>
 
         <div className="calcBoxCustoms__resultsCont">
