@@ -8,6 +8,7 @@ import { MapCanada } from "../../ui/MapCanada";
 import { MapGerman } from "../../ui/MapGerman";
 import { MapPoland } from "../../ui/MapPoland";
 import { MapUSA } from "../../ui/MapUSA";
+import language from "../../framework/mock.json";
 
 type Props = {
   category: string,
@@ -26,6 +27,8 @@ type Props = {
 }
 
 export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localStateDelivery, toPortDelivery, containerAndBroker, documentsDelivery, complex, totalDeliveryPrice, setCategory, setCounty, setMap, setPort }) => {
+  const [mock] = useState(language.polska.CalcBoxDelivery);
+
   const [categoryImage, setCategoryImage] = useState(category_1);
   const [mapComponent, setMapComponent] = useState(<MapUSA setCounty={setCounty} />);
 
@@ -73,14 +76,14 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
   return (
     <div className="calculator__box calcBoxDelivery">
       <p className="calcBoxDelivery__title">
-        Калькулятор ДОСТАВКИ
+        {mock.title}
       </p>
 
 
       <div className="calcBoxDelivery__form calcGrid">
         <div className="calcBoxDelivery__category">
           <p className="calcBoxDelivery__category__title">
-            Кузов:
+            {mock.category__title}
           </p>
 
           <div className="calcBoxDelivery__category__buttons">
@@ -94,8 +97,12 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
               checked={category === CATEGORY_CONFIG.first}
             />
             <label htmlFor="category_1" className="calcBoxDelivery__category__button">
-              <p className="calcBoxDelivery__category__button__title">І категорія</p>
-              <p className="calcBoxDelivery__category__button__text">седан хетчбек універсал</p>
+              <p className="calcBoxDelivery__category__button__title">
+                {mock.category__1__button__title}
+              </p>
+              <p className="calcBoxDelivery__category__button__text">
+                {mock.category__1__button__text}
+              </p>
             </label>
 
             <input
@@ -108,8 +115,12 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
               checked={category === CATEGORY_CONFIG.second}
             />
             <label htmlFor="category_2" className="calcBoxDelivery__category__button">
-              <p className="calcBoxDelivery__category__button__title">ІІ категорія</p>
-              <p className="calcBoxDelivery__category__button__text">кросовер позашляховик мінівен</p>
+              <p className="calcBoxDelivery__category__button__title">
+                {mock.category__2__button__title}
+              </p>
+              <p className="calcBoxDelivery__category__button__text">
+                {mock.category__2__button__text}
+              </p>
             </label>
 
             <input
@@ -122,8 +133,12 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
               checked={category === CATEGORY_CONFIG.third}
             />
             <label htmlFor="category_3" className="calcBoxDelivery__category__button">
-              <p className="calcBoxDelivery__category__button__title">ІІІ категорія</p>
-              <p className="calcBoxDelivery__category__button__text">пікап мікроавтобус та ін.</p>
+              <p className="calcBoxDelivery__category__button__title">
+                {mock.category__3__button__title}
+              </p>
+              <p className="calcBoxDelivery__category__button__text">
+                {mock.category__3__button__text}
+              </p>
             </label>
           </div>
 
@@ -132,7 +147,7 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
 
         <div className="calcBoxDelivery__map">
           <p className="calcBoxDelivery__map__title">
-            Штат аукціону:
+            {mock.map__title}
           </p>
 
           <div className="calcBoxDelivery__map__buttons">
@@ -146,7 +161,7 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
               checked={map === MAP_CONFIG.usa}
             />
             <label htmlFor="map_usa" className="calcBoxDelivery__map__button">
-              США
+              {mock.map__button__usa}
             </label>
 
             <input
@@ -159,7 +174,7 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
               checked={map === MAP_CONFIG.canada}
             />
             <label htmlFor="map_canada" className="calcBoxDelivery__map__button">
-              Канада
+              {mock.map__button__canada}
             </label>
           </div>
 
@@ -167,7 +182,7 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
           {mapComponent}
 
           <p className="calcBoxDelivery__map__title">
-            Порт доставки:
+            {mock.port__title}
           </p>
 
           <div className="calcBoxDelivery__map__ports">
@@ -185,12 +200,11 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
               </label>
 
               <p className="calcBoxDelivery__map__port__country">
-                Німеччина
+                {mock.port__country__german}
               </p>
               <p className="calcBoxDelivery__map__port__city">
-                (Бремен)
+                {mock.port__city__german}
               </p>
-
             </span>
 
             <span className="calcBoxDelivery__map__port">
@@ -207,34 +221,34 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
               </label>
 
               <p className="calcBoxDelivery__map__port__country">
-                Польща
+                {mock.port__country__poland}
               </p>
               <p className="calcBoxDelivery__map__port__city">
-                (Варшава)
+                {mock.port__city__poland}
               </p>
             </span>
           </div>
         </div>
 
         <div className="calcBoxDelivery__resultsCont">
-          <CalcBox text={`Доставка з аукціону до порту в ${map === MAP_CONFIG.usa ? "Америці" : "Канаді"}`} value={localStateDelivery} />
+          <CalcBox text={`${mock.calc__box__local__divivery} ${map === MAP_CONFIG.usa ? mock.calc__box__local__divivery__usa : mock.calc__box__local__divivery__canada}`} value={localStateDelivery} />
 
-          <CalcBox text="Доставка у порт призначення" value={+localStateDelivery ? toPortDelivery : "0.00"} />
+          <CalcBox text={mock.calc__box__divivery__to__port} value={Number(localStateDelivery) ? toPortDelivery : "0.00"} />
 
-          <CalcBox text="Загрузка, вигрузка контейнера + Брокер" value={containerAndBroker} />
+          <CalcBox text={mock.calc__box__divivery__container__and__broker} value={containerAndBroker} />
         </div>
 
         <div className="calcBoxDelivery__resultsCont">
-          <CalcBox text="Доставка документів" value={(+localStateDelivery && +toPortDelivery && documentsDelivery) || "0.00"} />
+          <CalcBox text={mock.calc__box__divivery__documents} value={(Number(localStateDelivery) && Number(toPortDelivery) && documentsDelivery) || "0.00"} />
 
-          <CalcBox text="Комплексні послуги" value={(+localStateDelivery && +toPortDelivery && complex) || "0.00"} />
+          <CalcBox text={mock.calc__box__divivery__complex__service} value={(Number(localStateDelivery) && Number(toPortDelivery) && complex) || "0.00"} />
         </div>
       </div>
 
 
       <div className="calcBoxDelivery__footer">
         <p>
-          Вартість доставки
+          {mock.footer}
         </p>
 
         <p>
