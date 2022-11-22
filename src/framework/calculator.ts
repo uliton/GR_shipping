@@ -404,14 +404,15 @@ export const insuranceCalculation = (lotCost: string, auction_fee: number, perce
 
 // locale state delivery
 export const stateDeliveryCalculation = (auction: string, map: string, county: string) => {
-  
+  const extraCost = 100;
+
   // USA
   if (map === MAP_CONFIG.usa) {
     if (auction === AUCTIONS_CONFIG.copart) {
       for (const state in USA_DELIVERY_CONFIG) {
         if (state === county) {
           // @ts-ignore
-          const stateDelivery = USA_DELIVERY_CONFIG[state][AUCTIONS_CONFIG.copart];
+          const stateDelivery = USA_DELIVERY_CONFIG[state][AUCTIONS_CONFIG.copart] + extraCost;
 
           return stateDelivery;
         }
@@ -422,7 +423,7 @@ export const stateDeliveryCalculation = (auction: string, map: string, county: s
       for (const state in USA_DELIVERY_CONFIG) {
         if (state === county) {
           // @ts-ignore
-          const stateDelivery = USA_DELIVERY_CONFIG[state][AUCTIONS_CONFIG.aiia];
+          const stateDelivery = USA_DELIVERY_CONFIG[state][AUCTIONS_CONFIG.aiia] + extraCost;
 
           return stateDelivery
         }
@@ -451,7 +452,7 @@ export const stateDeliveryCalculation = (auction: string, map: string, county: s
     for (const state in states) {
       if (state === county) {
         // @ts-ignore
-        const stateDelivery = states[state];
+        const stateDelivery = states[state] + extraCost;
 
         return stateDelivery;
       }
