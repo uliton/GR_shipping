@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import language from "../../framework/mock.json";
 
 export const CalcHeader: React.FC = () => {
+  const [mock] = useState(language.polska.CalcHeader)
+  console.log(mock);
+  
   return (
     <div className="container">
       <div className="calculator__header calcH">
         <p className="calcH__location">
-          Головна
+          {mock.location}
         </p>
 
         <div className="calcH__form">
           <p className="calcH__form__title">
-            Вставте посилання з Copart або IAAI:
+            {mock.form__title}
           </p>
 
           <div className="calcH__form__container">
@@ -21,13 +25,13 @@ export const CalcHeader: React.FC = () => {
             />
 
             <button type="button" className="calcH__form__container__button">
-              Сканувати
+              {mock.form__container__button}
             </button>
           </div>
         </div>
 
         <p className="calcH__footer">
-          Або введіть дані самостійно:
+          {mock.footer}
         </p>
       </div>
     </div>
