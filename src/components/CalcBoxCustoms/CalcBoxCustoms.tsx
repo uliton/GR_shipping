@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import copart from '../../images/calculator/auctions/copart.png';
 import aiia from '../../images/calculator/auctions/aiia.png';
 import cars from '../../images/calculator/cars.png';
 import { AUCTIONS_CONFIG, ENGINE_CONFIG } from "../../framework/calculator";
 import { CalcBox } from "../../ui/CalcBox";
 import { InputRadio } from "../../ui/InputRadio";
+import language from "../../framework/mock.json";
 
 type Props = {
   lotYear: string,
@@ -23,6 +24,8 @@ type Props = {
 }
 
 export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVolume, auction_fee, /*excise,*/ insurance, totalCustomsPrice, setEngine, setAuction, setLotYear, setLotCost, setLotEngineVolume, setInsurancePercent }) => {
+  const [mock] = useState(language.polska.CalcBoxCustoms);
+
   const renderLotCost = (lotCost || '0') + '.00';
   const integer = '1234567890';
   // const whole = integer + '.';
@@ -68,7 +71,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
   return (
     <div className="calculator__box calcBoxCustoms">
       <p className="calcBoxCustoms__title">
-        Калькулятор розмитнення
+        {mock.title}
       </p>
 
 
@@ -77,7 +80,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
         <div className="calcBoxCustoms__infoCont">
           <div className="calcBoxCustoms__infoCont__engine">
             <p className="calcBoxCustoms__infoCont__engine__title">
-              Двигун:
+              {mock.engine__title}
             </p>
 
             <div className="calcBoxCustoms__infoCont__engine__buttons">
@@ -90,7 +93,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
                 onChange={e => {handleChangeEngine(e.target.value)}}
               />
               <label htmlFor="engine_petrol" className="calcBoxCustoms__infoCont__engine__button">
-                Бензин
+                {mock.engine__button__petrol}
               </label>
             
               <input
@@ -102,7 +105,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
                 onChange={e => {handleChangeEngine(e.target.value)}}
               />
               <label htmlFor="engine_disel" className="calcBoxCustoms__infoCont__engine__button">
-                Дизель
+                {mock.engine__button__diesel}
               </label>
 
               <input
@@ -114,7 +117,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
                 onChange={e => {handleChangeEngine(e.target.value)}}
               />
               <label htmlFor="engine_hybrid" className="calcBoxCustoms__infoCont__engine__button">
-                Гібрид
+                {mock.engine__button__hybrid}
               </label>
             
               <input
@@ -126,14 +129,14 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
                 onChange={e => {handleChangeEngine(e.target.value)}}
               />
               <label htmlFor="engine_electro" className="calcBoxCustoms__infoCont__engine__button">
-                Електро
+                {mock.engine__button__electro}
               </label>
             </div>
           </div>
 
           <div className="calcBoxCustoms__infoCont__auction">
             <p className="calcBoxCustoms__infoCont__auction__title">
-              Аукціон:
+              {mock.auction__title}
             </p>
 
             <div className="calcBoxCustoms__infoCont__auction__buttons">
@@ -166,7 +169,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
           <div className="calcBoxCustoms__infoCont__addition">
             <div className="calcBoxCustoms__infoCont__addition__box">
               <p className="calcBoxCustoms__infoCont__addition__box__title">
-                Рік випуску:
+                {mock.addition__box__title__year}
               </p>
 
               <input
@@ -180,7 +183,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
 
             <div className="calcBoxCustoms__infoCont__addition__box">
               <p className="calcBoxCustoms__infoCont__addition__box__title">
-                Вартість:
+                {mock.addition__box__title__price}
               </p>
 
               <input
@@ -194,7 +197,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
 
             <div className="calcBoxCustoms__infoCont__addition__box">
               <p className="calcBoxCustoms__infoCont__addition__box__title">
-                Об'єм двигуна:
+                {mock.addition__box__title__engine__volume}
               </p>
 
               <input
@@ -213,21 +216,21 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
         </div>
 
         <div className="calcBoxCustoms__resultsCont">
-          <CalcBox text="Вартість лоту" value={renderLotCost} />
+          <CalcBox text={mock.calc__box__price} value={renderLotCost} />
 
-          <CalcBox text="Збори аукціону" value={auction_fee} />
+          <CalcBox text={mock.calc__box__auction__fee} value={auction_fee} />
 
           {/* <CalcBox text="Акциз" value={excise} /> */}
         </div>
 
         <div className="calcBoxCustoms__resultsCont">
-          <CalcBox text="Страховий внесок" value={insurance} />
+          <CalcBox text={mock.calc__box__insurance} value={insurance} />
 
           <div className="calcBoxCustoms__resultsCont__box">
             <InputRadio
               name="insurance"
               id="insurance_5"
-              text="5 % на зовнішні пошкодження"
+              text={mock.insurance__5}
               value="5"
               setValue={setInsurancePercent}
             />
@@ -235,7 +238,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
             <InputRadio
               name="insurance"
               id="insurance_15"
-              text="15 % на зовнішні пошкодження, двигун, коробка передач"
+              text={mock.insurance__15}
               value="15"
               setValue={setInsurancePercent}
             />
@@ -243,7 +246,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
             <InputRadio
               name="insurance"
               id="insurance_0"
-              text="без страхового внеску"
+              text={mock.insurance__0}
               value="0"
               setValue={setInsurancePercent}
             />
@@ -255,7 +258,7 @@ export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVol
 
       <div className="calcBoxCustoms__footer">
         <p>
-          Сума платежів
+          {mock.footer}
         </p>
 
         <p>

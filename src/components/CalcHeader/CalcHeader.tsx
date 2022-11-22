@@ -3,8 +3,7 @@ import language from "../../framework/mock.json";
 
 export const CalcHeader: React.FC = () => {
   const [mock] = useState(language.polska.CalcHeader)
-  console.log(mock);
-  
+
   return (
     <div className="container">
       <div className="calculator__header calcH">
