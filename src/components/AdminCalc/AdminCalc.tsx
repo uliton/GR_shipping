@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AUCTIONS_CONFIG, auctionTaxCalculation, CATEGORY_CONFIG, clearanceCalculation, deliveryPriceCalculation, ENGINE_CONFIG, exciseCalculation, getCities, getStates, insuranceCalculation, MAP_CONFIG, portDelivery, releaseContainerAndBroker, stateDeliveryCalculation, stateDeliveryManagerCalculation, totalCalculation, totalManagerCalculation } from "../../framework/calculator";
 import "./AdminCalc.scss";
 import language from "../../framework/mock.json";
+import { getExchangeRate } from "../../framework/api";
 
 
 export const AdminCalc: React.FC = () => {
@@ -34,6 +35,18 @@ export const AdminCalc: React.FC = () => {
   const informService = 738;
   const total: number = totalManagerCalculation(price, auction_fee, localStateDelivery, toPortDelivery, broker, documentsDelivery, complex, informService, clearance, insurance, margin) || 0;
   const excise: number = exciseCalculation(year, price, auction_fee, engine, engineVolume) || 0;
+
+  const [exchangeRate, setExchangeRate] = useState<number>(1)
+  useEffect(() => {
+    getExchangeRate().then(result => {
+      if (result) {
+        setExchangeRate(result.rates[0].ask);
+      }
+    })
+  }, [])
+
+  console.log(exchangeRate);
+  
 
   const handeChangeYear = (e: string) => {
     if (integer.includes(e[e.length - 1])) {
@@ -244,6 +257,12 @@ export const AdminCalc: React.FC = () => {
         <p className="adminCalc__item">
           <span>
             Total: {total.toFixed(2)}$
+          </span>
+        </p>
+        <br />
+        <p className="adminCalc__item">
+          <span>
+            Total in zloty: {(total / exchangeRate).toFixed(2)}zł
           </span>
         </p>
         <br />
