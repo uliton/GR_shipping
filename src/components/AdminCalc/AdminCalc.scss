@@ -1,10 +1,17 @@
+@import '../../utils/mixins';
+
 .adminCalc {
   display: grid;
-  grid-template-columns: 300px 500px;
+  grid-template-columns: repeat(1, 350px);
   justify-content: center;
-  // align-items: center;
-  margin: 150px;
+  margin: 12px 0;
+  padding: 4px 8px;
   gap: 20px;
+
+  @include on896 {
+    grid-template-columns: 350px 420px;
+    margin: 50px 0;
+  }
 
   &__item {
     display: flex;
