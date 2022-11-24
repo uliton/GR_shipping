@@ -147,7 +147,7 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
 
         <div className="calcBoxDelivery__map">
           <p className="calcBoxDelivery__map__title">
-            {mock.map__title}
+            {mock.state__title}
           </p>
 
           <div className="calcBoxDelivery__map__buttons">

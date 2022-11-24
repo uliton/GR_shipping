@@ -1,5 +1,23 @@
+.adminCalc {
+  display: grid;
+  grid-template-columns: 300px 500px;
+  justify-content: center;
+  // align-items: center;
+  margin: 150px;
+  gap: 20px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+}
+
 .input {
-  width: 150px;
+  display: block;
+  width: 220px;
   height: 40px;
   padding: 4px 12px;
+  font-size: 16px;
 }

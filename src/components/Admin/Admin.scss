@@ -29,5 +29,9 @@
       background: #FFF;
       color: #880027;
     }
+
+    &:disabled {
+      opacity: 0.6;
+    }
   }
 }
