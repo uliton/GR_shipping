@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { AUCTIONS_CONFIG, auctionTaxCalculation, CATEGORY_CONFIG, clearanceCalculation, deliveryPriceCalculation, ENGINE_CONFIG, exciseCalculation, getCities, getStates, insuranceCalculation, MAP_CONFIG, portDelivery, releaseContainerAndBroker, stateDeliveryCalculation, stateDeliveryManagerCalculation, totalCalculation, totalManagerCalculation } from "../../framework/calculator";
+import { AUCTIONS_CONFIG, auctionTaxCalculation, CATEGORY_CONFIG, clearanceCalculation, ENGINE_CONFIG, exciseCalculation, getCities, getStates, insuranceCalculation, MAP_CONFIG, portDelivery, stateDeliveryManagerCalculation, totalManagerCalculation } from "../../framework/calculator";
 import "./AdminCalc.scss";
 import language from "../../framework/mock.json";
 import { getExchangeRate } from "../../framework/api";
 
 
 export const AdminCalc: React.FC = () => {
-  const [mockCustoms] = useState(language.ukrainian.CalcBoxCustoms)
-  const [mockDelivery] = useState(language.ukrainian.CalcBoxDelivery)
-  const [mockTotal] = useState(language.ukrainian.CalcBoxTotalCost)
+  const [mockCustoms] = useState(language.polska.CalcBoxCustoms)
+  const [mockDelivery] = useState(language.polska.CalcBoxDelivery)
+  const [mockTotal] = useState(language.polska.CalcBoxTotalCost)
   const [price, setPrice] = useState<string>('');
   const [engineVolume, setEngineVolume] = useState<string>('');
   const [year, setYear] = useState<string>('');
