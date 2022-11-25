@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AUCTIONS_CONFIG, auctionTaxCalculation, CATEGORY_CONFIG, clearanceCalculation, ENGINE_CONFIG, exciseCalculation, getCities, getStates, insuranceCalculation, MAP_CONFIG, portDelivery, stateDeliveryManagerCalculation, totalManagerCalculation } from "../../framework/calculator";
+import { AUCTIONS_CONFIG, auctionTaxCalculation, CATEGORY_CONFIG, clearanceCalculation, ENGINE_CONFIG, exciseCalculation, getCities, getStates, getYears, insuranceCalculation, MAP_CONFIG, portDelivery, stateDeliveryManagerCalculation, totalManagerCalculation } from "../../framework/calculator";
 import "./AdminCalc.scss";
 import language from "../../framework/mock.json";
 import { getExchangeRate } from "../../framework/api";
@@ -11,6 +11,7 @@ export const AdminCalc: React.FC = () => {
   const [mockTotal] = useState(language.polska.CalcBoxTotalCost)
   const [price, setPrice] = useState<string>('');
   const [engineVolume, setEngineVolume] = useState<string>('');
+  const years: number[] = getYears();
   const [year, setYear] = useState<string>('');
   const [engine, setEngine] = useState<string>('');
   const [auction, setAuction] = useState<string>('');
@@ -39,23 +40,14 @@ export const AdminCalc: React.FC = () => {
   const [exchangeRate, setExchangeRate] = useState<number>(1)
   useEffect(() => {
     getExchangeRate().then(result => {
-      if (result) {
+      try {
         setExchangeRate(result.rates[0].ask);
+      } catch {
+        const rate = 4.5;
+        setExchangeRate(rate)
       }
-    })
+    });
   }, [])
-
-  console.log(exchangeRate);
-  
-
-  const handeChangeYear = (e: string) => {
-    if (integer.includes(e[e.length - 1])) {
-      setYear(e);
-    }
-    if (!e.length) {
-      setYear('');
-    }
-  }
 
   const handeChangePrice = (e: string) => {
     if (integer.includes(e[e.length - 1])) {
@@ -65,17 +57,6 @@ export const AdminCalc: React.FC = () => {
       setPrice('');
     }
   }
-
-  const handeChangeEngineVolume = (e: string) => {
-    if (integer.includes(e[e.length - 1])) {
-      setEngineVolume(e);
-    }
-    if (!e.length) {
-      setEngineVolume('');
-    }
-  }
-
-  const handlerCalc = () => {}
 
   return (
     <div className="adminCalc">
@@ -92,21 +73,18 @@ export const AdminCalc: React.FC = () => {
           className="input"
         />
 
-        <input
-          type="text"
-          placeholder="engine volume"
-          value={engineVolume}
-          onChange={e => handeChangeEngineVolume(e.target.value)}
-          className="input"
-        />
+        <select className="input" onChange={e => setEngineVolume(e.target.value)}>
+          <option selected disabled >{mockCustoms.addition__box__title__engine__volume}</option>
+          <option value="1999">1 - 1999</option>
+          <option value="2000">2000 +</option>
+        </select>
 
-        <input
-          type="text"
-          placeholder="year"
-          className="input"
-          value={year}
-          onChange={e => handeChangeYear(e.target.value)}
-        />
+        <select className="input" onChange={e => setYear(e.target.value.toString())}>
+          <option selected disabled >{mockCustoms.addition__box__title__year}</option>
+          {years.map(year => (
+            <option key={year} value={year}>{year}</option>
+          ))}
+        </select>
 
         <select className="input" onChange={e => setEngine(e.target.value)}>
           <option selected disabled >{mockCustoms.engine__title}</option>
@@ -260,9 +238,9 @@ export const AdminCalc: React.FC = () => {
           </span>
         </p>
         <br />
-        <p className="adminCalc__item">
+        <p className="adminCalc__item" style={{fontWeight: "bold"}}>
           <span>
-            Total in zloty: {(total / exchangeRate).toFixed(2)}zł
+            Total in zloty: {(total * exchangeRate).toFixed(2)}zł
           </span>
         </p>
         <br />

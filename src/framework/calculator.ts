@@ -1704,6 +1704,19 @@ const CANADA_DELIVERY_MANAGER_CONFIG = {
 }
 
 
+// array with years
+export const getYears = () => {
+  const currentYear = new Date().getFullYear();
+  const yearsArray = []
+
+  for (let i = currentYear; i >= 1900; i--) {
+    yearsArray.push(i)
+  }
+
+  return yearsArray;
+}
+
+
 // array with states
 export const getStates = (country: string) => {
   if (country === MAP_CONFIG.usa) {
