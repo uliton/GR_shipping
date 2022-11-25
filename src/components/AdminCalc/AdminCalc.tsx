@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { AUCTIONS_CONFIG, auctionTaxCalculation, CATEGORY_CONFIG, clearanceCalculation, ENGINE_CONFIG, exciseCalculation, getCities, getStates, getYears, insuranceCalculation, MAP_CONFIG, portDelivery, stateDeliveryManagerCalculation, totalManagerCalculation, totalZlotyCalculation } from "../../framework/calculator";
 import "./AdminCalc.scss";
-import { getExchangeRate } from "../../framework/api";
 import { getMock, LanguageContext } from "../../framework/LanguageContext";
 
 export const AdminCalc: React.FC = () => {
@@ -34,19 +33,7 @@ export const AdminCalc: React.FC = () => {
   const informService = 738;
   const total: number = totalManagerCalculation(price, auction_fee, localStateDelivery, toPortDelivery, broker, documentsDelivery, complex, informService, clearance, insurance, margin) || 0;
   const excise: number = exciseCalculation(year, price, auction_fee, engine, engineVolume) || 0;
-
-  const [exchangeRate, setExchangeRate] = useState<number>(0);
-  const totalZloty = totalZlotyCalculation(total, exchangeRate);
-  useEffect(() => {
-    getExchangeRate().then(result => {
-      try {
-        setExchangeRate(result.rates[0].ask);
-      } catch {
-        const rate = 4.5;
-        setExchangeRate(rate)
-      }
-    });
-  }, [])
+  const totalZloty = totalZlotyCalculation(total);
 
   const handeChangePrice = (e: string) => {
     if (integer.includes(e[e.length - 1])) {

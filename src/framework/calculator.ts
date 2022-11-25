@@ -1795,6 +1795,7 @@ export const totalManagerCalculation = (price: string, auction_fee: number, loca
 
 
 // total zloty calc
-export const totalZlotyCalculation = (total: number, exchangeRate: number) => {
-  return total * exchangeRate;
+export const totalZlotyCalculation = (total: number) => {
+  const rate = 4.55;
+  return total * rate;
 }
