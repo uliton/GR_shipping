@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { AUCTIONS_CONFIG, auctionTaxCalculation, CATEGORY_CONFIG, clearanceCalculation, ENGINE_CONFIG, exciseCalculation, getCities, getStates, getYears, insuranceCalculation, MAP_CONFIG, portDelivery, stateDeliveryManagerCalculation, totalManagerCalculation } from "../../framework/calculator";
+import { AUCTIONS_CONFIG, auctionTaxCalculation, CATEGORY_CONFIG, clearanceCalculation, ENGINE_CONFIG, exciseCalculation, getCities, getStates, getYears, insuranceCalculation, MAP_CONFIG, portDelivery, stateDeliveryManagerCalculation, totalManagerCalculation, totalZlotyCalculation } from "../../framework/calculator";
 import "./AdminCalc.scss";
 import { getExchangeRate } from "../../framework/api";
 import { getMock, LanguageContext } from "../../framework/LanguageContext";
@@ -35,13 +35,14 @@ export const AdminCalc: React.FC = () => {
   const total: number = totalManagerCalculation(price, auction_fee, localStateDelivery, toPortDelivery, broker, documentsDelivery, complex, informService, clearance, insurance, margin) || 0;
   const excise: number = exciseCalculation(year, price, auction_fee, engine, engineVolume) || 0;
 
-  const rate = 4.5;
-  const [exchangeRate, setExchangeRate] = useState<number>(rate)
+  const [exchangeRate, setExchangeRate] = useState<number>(0);
+  const totalZloty = totalZlotyCalculation(total, exchangeRate);
   useEffect(() => {
     getExchangeRate().then(result => {
       try {
         setExchangeRate(result.rates[0].ask);
       } catch {
+        const rate = 4.5;
         setExchangeRate(rate)
       }
     });
@@ -172,7 +173,7 @@ export const AdminCalc: React.FC = () => {
         </p>
         <p className="adminCalc__item">
           <span>
-            {mock.CalcBoxDelivery.calc__box__divivery__to__port} {'->'} {toPortDelivery}$
+            {mock.CalcBoxDelivery.calc__box__divivery__to__port} {'->'} {toPortDelivery.toFixed(2)}$
           </span>
         </p>
         <p className="adminCalc__item">
@@ -216,7 +217,7 @@ export const AdminCalc: React.FC = () => {
         <br />
         <p className="adminCalc__item" style={{fontWeight: "bold"}}>
           <span>
-            Total in zloty: {(total * exchangeRate).toFixed(2)}zł
+            Total in zloty: {totalZloty.toFixed(2)}zł
           </span>
         </p>
         <br />
