@@ -27,7 +27,7 @@ type Props = {
 }
 
 export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localStateDelivery, toPortDelivery, containerAndBroker, documentsDelivery, complex, totalDeliveryPrice, setCategory, setCounty, setMap, setPort }) => {
-  const [mock] = useState(language.polska.CalcBoxDelivery);
+  const [mock] = useState(language.polish.CalcBoxDelivery);
 
   const [categoryImage, setCategoryImage] = useState(category_1);
   const [mapComponent, setMapComponent] = useState(<MapUSA setCounty={setCounty} />);

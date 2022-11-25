@@ -24,7 +24,7 @@ type Props = {
 }
 
 export const CalcBoxCustoms: React.FC<Props> = ({ lotYear, lotCost, lotEngineVolume, auction_fee, /*excise,*/ insurance, totalCustomsPrice, setEngine, setAuction, setLotYear, setLotCost, setLotEngineVolume, setInsurancePercent }) => {
-  const [mock] = useState(language.polska.CalcBoxCustoms);
+  const [mock] = useState(language.polish.CalcBoxCustoms);
 
   const renderLotCost = (lotCost || '0') + '.00';
   const integer = '1234567890';

@@ -13,7 +13,7 @@ type Props = {
 }
 
 export const CalcBoxTotalCost: React.FC<Props> = ({ lotCost, auction_fee, totalDeliveryPrice, informService, clearance, excise, total }) => {
-  const [mock] = useState(language.polska.CalcBoxTotalCost);
+  const [mock] = useState(language.polish.CalcBoxTotalCost);
 
   return (
     <div className="calculator__box calcBoxTotalCost">

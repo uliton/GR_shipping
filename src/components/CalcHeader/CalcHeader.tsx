@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import language from "../../framework/mock.json";
 
 export const CalcHeader: React.FC = () => {
-  const [mock] = useState(language.polska.CalcHeader)
+  const [mock] = useState(language.polish.CalcHeader)
 
   return (
     <div className="container">

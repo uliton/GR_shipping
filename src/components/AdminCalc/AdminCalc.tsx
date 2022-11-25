@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AUCTIONS_CONFIG, auctionTaxCalculation, CATEGORY_CONFIG, clearanceCalculation, ENGINE_CONFIG, exciseCalculation, getCities, getStates, getYears, insuranceCalculation, MAP_CONFIG, portDelivery, stateDeliveryManagerCalculation, totalManagerCalculation } from "../../framework/calculator";
 import "./AdminCalc.scss";
-import language from "../../framework/mock.json";
 import { getExchangeRate } from "../../framework/api";
-
+import { getMock, LanguageContext } from "../../framework/LanguageContext";
 
 export const AdminCalc: React.FC = () => {
-  const [mockCustoms] = useState(language.polska.CalcBoxCustoms)
-  const [mockDelivery] = useState(language.polska.CalcBoxDelivery)
-  const [mockTotal] = useState(language.polska.CalcBoxTotalCost)
+  const language = useContext(LanguageContext);
+  const mock = getMock(language);
   const [price, setPrice] = useState<string>('');
   const [engineVolume, setEngineVolume] = useState<string>('');
   const years: number[] = getYears();
@@ -74,104 +72,82 @@ export const AdminCalc: React.FC = () => {
         />
 
         <select className="input" onChange={e => setEngineVolume(e.target.value)}>
-          <option selected disabled >{mockCustoms.addition__box__title__engine__volume}</option>
+          <option selected disabled >{mock.CalcBoxCustoms.addition__box__title__engine__volume}</option>
           <option value="1999">1 - 1999</option>
           <option value="2000">2000 +</option>
         </select>
 
         <select className="input" onChange={e => setYear(e.target.value.toString())}>
-          <option selected disabled >{mockCustoms.addition__box__title__year}</option>
+          <option selected disabled >{mock.CalcBoxCustoms.addition__box__title__year}</option>
           {years.map(year => (
             <option key={year} value={year}>{year}</option>
           ))}
         </select>
 
         <select className="input" onChange={e => setEngine(e.target.value)}>
-          <option selected disabled >{mockCustoms.engine__title}</option>
-          <option value={ENGINE_CONFIG.petrol}>{mockCustoms.engine__button__petrol}</option>
-          <option value={ENGINE_CONFIG.disel}>{mockCustoms.engine__button__diesel}</option>
-          <option value={ENGINE_CONFIG.hybrid}>{mockCustoms.engine__button__hybrid}</option>
-          <option value={ENGINE_CONFIG.electro}>{mockCustoms.engine__button__electro}</option>
+          <option selected disabled >{mock.CalcBoxCustoms.engine__title}</option>
+          <option value={ENGINE_CONFIG.petrol}>{mock.CalcBoxCustoms.engine__button__petrol}</option>
+          <option value={ENGINE_CONFIG.disel}>{mock.CalcBoxCustoms.engine__button__diesel}</option>
+          <option value={ENGINE_CONFIG.hybrid}>{mock.CalcBoxCustoms.engine__button__hybrid}</option>
+          <option value={ENGINE_CONFIG.electro}>{mock.CalcBoxCustoms.engine__button__electro}</option>
         </select>
 
         <select className="input" onChange={e => setAuction(e.target.value)}>
-          <option selected disabled >{mockCustoms.auction__title}</option>
+          <option selected disabled >{mock.CalcBoxCustoms.auction__title}</option>
           <option value={AUCTIONS_CONFIG.copart}>{AUCTIONS_CONFIG.copart}</option>
           <option value={AUCTIONS_CONFIG.aiia}>{AUCTIONS_CONFIG.aiia}</option>
         </select>
 
         <select className="input" onChange={e => setCategory(e.target.value)}>
-          <option selected disabled >{mockDelivery.category__title}</option>
+          <option selected disabled >{mock.CalcBoxDelivery.category__title}</option>
           <option value={CATEGORY_CONFIG.first}>
-            {mockDelivery.category__1__button__title} - {mockDelivery.category__1__button__text}
+            {mock.CalcBoxDelivery.category__1__button__title} - {mock.CalcBoxDelivery.category__1__button__text}
           </option>
           <option value={CATEGORY_CONFIG.second}>
-            {mockDelivery.category__2__button__title} - {mockDelivery.category__2__button__text}
+            {mock.CalcBoxDelivery.category__2__button__title} - {mock.CalcBoxDelivery.category__2__button__text}
           </option>
           <option value={CATEGORY_CONFIG.third}>
-            {mockDelivery.category__3__button__title} - {mockDelivery.category__3__button__text}
+            {mock.CalcBoxDelivery.category__3__button__title} - {mock.CalcBoxDelivery.category__3__button__text}
           </option>
         </select>
 
         <select className="input" onChange={e => setCountry(e.target.value)}>
-          <option selected disabled >{mockDelivery.map__title}</option>
-          <option value={MAP_CONFIG.usa}>{mockDelivery.map__button__usa}</option>
-          <option value={MAP_CONFIG.canada}>{mockDelivery.map__button__canada}</option>
+          <option selected disabled >{mock.CalcBoxDelivery.map__title}</option>
+          <option value={MAP_CONFIG.usa}>{mock.CalcBoxDelivery.map__button__usa}</option>
+          <option value={MAP_CONFIG.canada}>{mock.CalcBoxDelivery.map__button__canada}</option>
         </select>
 
 
         <select className="input" onChange={e => setState(e.target.value)}>
-          <option selected disabled >{mockDelivery.state__title}</option>
+          <option selected disabled >{mock.CalcBoxDelivery.state__title}</option>
           {states.map((state, i) => (
             <option key={i} value={state}>{state}</option>
           ))}
         </select>
 
         <select className="input" onChange={e => setCity(e.target.value)}>
-          <option selected disabled >{mockDelivery.city__title}</option>
+          <option selected disabled >{mock.CalcBoxDelivery.city__title}</option>
           {cities.map((city, i) => (
             <option key={i} value={city}>{city}</option>
           ))}
         </select>
 
         <select className="input" onChange={e => setPort(e.target.value)}>
-          <option selected disabled >{mockDelivery.port__title}</option>
+          <option selected disabled >{mock.CalcBoxDelivery.port__title}</option>
           <option value={MAP_CONFIG.german}>
-            {mockDelivery.port__country__german} - {mockDelivery.port__city__german}
+            {mock.CalcBoxDelivery.port__country__german} - {mock.CalcBoxDelivery.port__city__german}
           </option>
           <option value={MAP_CONFIG.poland}>
-            {mockDelivery.port__country__poland} - {mockDelivery.port__city__poland}
+            {mock.CalcBoxDelivery.port__country__poland} - {mock.CalcBoxDelivery.port__city__poland}
           </option>
         </select>
 
         <select className="input" onChange={e => setInsurancePercent(e.target.value)}>
-          <option selected disabled >{mockCustoms.calc__box__insurance}</option>
-          <option value="5">{mockCustoms.insurance__5}</option>
-          <option value="15">{mockCustoms.insurance__15}</option>
-          <option value="0">{mockCustoms.insurance__0}</option>
+          <option selected disabled >{mock.CalcBoxCustoms.calc__box__insurance}</option>
+          <option value="5">{mock.CalcBoxCustoms.insurance__5}</option>
+          <option value="15">{mock.CalcBoxCustoms.insurance__15}</option>
+          <option value="0">{mock.CalcBoxCustoms.insurance__0}</option>
         </select>
-
-        {/* {price && engineVolume && year && engine && auction && category && country && state && city && port && insurancePercent
-          ? (
-            <button
-              type="button"
-              className="admin__button"
-              onClick={handlerCalc}
-            >
-              Розрахувати
-            </button>
-
-          )
-          : (
-            <button
-              type="button"
-              className="admin__button"
-              disabled
-            >
-              Розрахувати
-            </button>
-          )
-        } */}
       </div>
 
       <div>
@@ -181,27 +157,27 @@ export const AdminCalc: React.FC = () => {
 
         <p className="adminCalc__item">
           <span>
-            {mockCustoms.calc__box__price} {'->'} {price || 0}$
+            {mock.CalcBoxCustoms.calc__box__price} {'->'} {price || 0}$
           </span>
         </p>
         <p className="adminCalc__item">
           <span>
-            {mockCustoms.calc__box__auction__fee} {'->'} {auction_fee}$
+            {mock.CalcBoxCustoms.calc__box__auction__fee} {'->'} {auction_fee}$
           </span>
         </p>
         <p className="adminCalc__item">
           <span>
-            {mockDelivery.calc__box__local__divivery} {'->'} {localStateDelivery}$
+            {mock.CalcBoxDelivery.calc__box__local__divivery} {'->'} {localStateDelivery}$
           </span>
         </p>
         <p className="adminCalc__item">
           <span>
-            {mockDelivery.calc__box__divivery__to__port} {'->'} {toPortDelivery}$
+            {mock.CalcBoxDelivery.calc__box__divivery__to__port} {'->'} {toPortDelivery}$
           </span>
         </p>
         <p className="adminCalc__item">
           <span>
-            {mockDelivery.calc__box__divivery__container__and__broker} {'->'} {`${margin}$ + ${broker}$`}
+            {mock.CalcBoxDelivery.calc__box__divivery__container__and__broker} {'->'} {`${margin}$ + ${broker}$`}
           </span>
           <span>
             (margin + broker)
@@ -209,27 +185,27 @@ export const AdminCalc: React.FC = () => {
         </p>
         <p className="adminCalc__item">
           <span>
-            {mockDelivery.calc__box__divivery__documents} {'->'} {documentsDelivery}$
+            {mock.CalcBoxDelivery.calc__box__divivery__documents} {'->'} {documentsDelivery}$
           </span>
         </p>
         <p className="adminCalc__item">
           <span>
-            {mockDelivery.calc__box__divivery__complex__service} {'->'} {complex}$
+            {mock.CalcBoxDelivery.calc__box__divivery__complex__service} {'->'} {complex}$
           </span>
         </p>
         <p className="adminCalc__item">
           <span>
-            {mockTotal.calc__box__info__service__price} {'->'} {informService}$
+            {mock.CalcBoxTotalCost.calc__box__info__service__price} {'->'} {informService}$
           </span>
         </p>
         <p className="adminCalc__item">
           <span>
-            {mockTotal.calc__box__clearance__price} {'->'} {clearance.toFixed(2)}$
+            {mock.CalcBoxTotalCost.calc__box__clearance__price} {'->'} {clearance.toFixed(2)}$
           </span>
         </p>
         <p className="adminCalc__item">
           <span>
-            {mockCustoms.calc__box__insurance} - {insurance.toFixed(2)}$
+            {mock.CalcBoxCustoms.calc__box__insurance} - {insurance.toFixed(2)}$
           </span>
         </p>
         <p className="adminCalc__item">
@@ -246,7 +222,7 @@ export const AdminCalc: React.FC = () => {
         <br />
         <p className="adminCalc__item">
           <span>
-            {mockTotal.calc__box__excise__price} {'->'} {excise.toFixed(2)}$
+            {mock.CalcBoxTotalCost.calc__box__excise__price} {'->'} {excise.toFixed(2)}$
           </span>
           <span>
             (not included)
