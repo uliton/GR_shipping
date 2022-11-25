@@ -37,13 +37,13 @@ export const AdminCalc: React.FC = () => {
   const total: number = totalManagerCalculation(price, auction_fee, localStateDelivery, toPortDelivery, broker, documentsDelivery, complex, informService, clearance, insurance, margin) || 0;
   const excise: number = exciseCalculation(year, price, auction_fee, engine, engineVolume) || 0;
 
-  const [exchangeRate, setExchangeRate] = useState<number>(1)
+  const rate = 4.5;
+  const [exchangeRate, setExchangeRate] = useState<number>(rate)
   useEffect(() => {
     getExchangeRate().then(result => {
       try {
         setExchangeRate(result.rates[0].ask);
       } catch {
-        const rate = 4.5;
         setExchangeRate(rate)
       }
     });
