@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { getAccess } from "../../framework/access";
+import { getCop } from "../../framework/api";
 import "./Admin.scss";
 
 export const Admin: React.FC = () => {
@@ -20,6 +21,13 @@ export const Admin: React.FC = () => {
       setPassword('');
     }
   }
+
+
+  useEffect(() => {
+    getCop().then(result => {
+      console.log(result);
+    })
+  }, []);
 
   return (
     <div className="admin">
