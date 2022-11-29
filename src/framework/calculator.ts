@@ -287,13 +287,24 @@ const USA_DELIVERY_CONFIG = {
 // auctions fee
 export const auctionTaxCalculation = (lotCost: string, auction: string) => {
   const cost = Number(lotCost);
-  
-  if (auction) {
-    const fixFee = 79;
-    const extraFee = 10;
-    const hidenTax = 50;
-    const minCost = fixFee + extraFee + hidenTax;
-  
+  const hidenTax = 50;
+
+  if (cost === 0) {
+    return 0;
+  }
+
+  // copart
+  if (auction === AUCTIONS_CONFIG.copart) {
+    const serviceFee = 79;
+    const environmentalFee = 10;
+    const minCost = serviceFee + environmentalFee + hidenTax;
+
+    if (cost >= 15000) {
+      const percent = cost * 0.0575;
+      const auctionFee = minCost + percent + 149;
+      return auctionFee;
+    }
+
     const costFee = {
       '99.99': 1,
       '199.99': 25 + 49,
@@ -336,17 +347,68 @@ export const auctionTaxCalculation = (lotCost: string, auction: string) => {
       '12499.99': 775 + 149,
       '14999.99': 790 + 149,
     };
-  
-    if (cost === 0) {
-      return 0;
+
+    for (const price in costFee) {
+      if (cost <= Number(price)) {
+        // @ts-ignore
+        const lotFee: number = costFee[price];
+        const auctionFee = minCost + lotFee;
+        return auctionFee;
+      }
     }
-  
+  }
+
+  // aiia
+  if (auction === AUCTIONS_CONFIG.aiia) {
+    const serviceFee = 79;
+    const environmentalFee = 10;
+    const branchPayment = 20;
+    const minCost = serviceFee + environmentalFee + hidenTax;
+
     if (cost >= 15000) {
-      const percent = cost * 0.0575;
-      const auctionFee = minCost + percent + 149;
+      const percent = cost * 0.075;
+      const auctionFee = minCost + percent + 129;
       return auctionFee;
     }
-  
+
+    const costFee = {
+      '49.99': 25,
+      '99.99': 45,
+      '199.99': 80 + 39,
+      '299.99': 120 + 39,
+      '399.99': 120 + 39,
+      '499.99': 170 + 39,
+      '549.99': 195 + 49,
+      '599.99': 195 + 49,
+      '699.99': 225 + 49,
+      '799.99': 245 + 49,
+      '899.99': 265 + 49,
+      '999.99': 290 + 49,
+      '1099.99': 340 + 69,
+      '1199.99': 355 + 69,
+      '1299.99': 370 + 69,
+      '1399.99': 385 + 69,
+      '1499.99': 400 + 69,
+      '1599.99': 415 + 79,
+      '1699.99': 430 + 79,
+      '1799.99': 445 + 79,
+      '1999.99': 460 + 79,
+      '2199.99': 480 + 89,
+      '2399.99': 495 + 89,
+      '2599.99': 510 + 89,
+      '2799.99': 525 + 89,
+      '2999.99': 550 + 89,
+      '3499.99': 650 + 89,
+      '3999.99': 700 + 89,
+      '4499.99': 725 + 99,
+      '4999.99': 750 + 99,
+      '5999.99': 775 + 99,
+      '6999.99': 800 + 119,
+      '7999.99': 825 + 119,
+      '9999.99': 850 + 129,
+      '14999.99': 900 + 129,
+    };
+
     for (const price in costFee) {
       if (cost <= Number(price)) {
         // @ts-ignore
