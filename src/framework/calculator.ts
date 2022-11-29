@@ -362,8 +362,9 @@ export const auctionTaxCalculation = (lotCost: string, auction: string) => {
   if (auction === AUCTIONS_CONFIG.aiia) {
     const serviceFee = 79;
     const environmentalFee = 10;
-    const branchPayment = 20;
-    const minCost = serviceFee + environmentalFee + hidenTax;
+    const premiumVehicleReport = 15;
+    const branchPayment = 35;
+    const minCost = serviceFee + environmentalFee + premiumVehicleReport + branchPayment + hidenTax;
 
     if (cost >= 15000) {
       const percent = cost * 0.075;
