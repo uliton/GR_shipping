@@ -1,4 +1,9 @@
 import React from "react";
+import menu from "../../images/nav/menu.svg";
+import logo from "../../images/nav/logo.svg";
+import "./Navigation.scss";
+import { LanguageSelect } from "../../ui/LanguageSelect";
+import { ModeSelect } from "../../ui/ModeSelect";
 
 type Props = {
   language: string,
@@ -7,16 +12,16 @@ type Props = {
 
 export const Navigation: React.FC<Props> = ({ language, setLanguage }) => {
   return (
-    <nav className="nav">
-      <div className="container">
+    <nav className="container">
+      <div className="nav">
         <div className="nav__menu">
-          <img src="" alt="" />
+          <img src={menu} alt="menu" className="nav__menu__image"/>
         </div>
 
         <div className="nav__container">
-          <img src="" alt="" className="nav__logo"/>
+          <img src={logo} alt="GRshopping Logo" className="nav__logo"/>
 
-          {/* <ul className="nav__list">
+          <ul className="nav__list">
             <li className="nav__item">
               <a href="/">Головна</a>
             </li>
@@ -32,23 +37,16 @@ export const Navigation: React.FC<Props> = ({ language, setLanguage }) => {
             <li className="nav__item">
               <a href="/">Особистий кабінет</a>
             </li>
-            <li className="nav__item">
+            <li className="nav__item nav__item--last">
               <a href="mailto:info@grshipping.pl">info@grshipping.pl</a>
               <a href="tel:+48532007308">+48 532 007 308</a>
             </li>
-          </ul> */}
+          </ul>
 
           <div className="nav__mods">
-            <div className="language">
-              <select value={language} onChange={e => setLanguage(e.target.value)}>
-                <option value="polish">Polski</option>
-                <option value="ukrainian">Українська</option>
-              </select>
-            </div>
+            <LanguageSelect language={language} setLanguage={setLanguage} />
 
-            <div className="light_and_dark">
-
-            </div>
+            <ModeSelect />
           </div>
         </div>
       </div>

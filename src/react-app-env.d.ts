@@ -26,6 +26,11 @@ interface MapConfig {
   poland: string,
 }
 
+interface LanguageConfig {
+  polish: string,
+  ukrainian: string,
+}
+
 interface CalculatorItems {
   engine: string,
   auction: string,

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AUCTIONS_CONFIG, auctionTaxCalculation, CATEGORY_CONFIG, clearanceCalculation, ENGINE_CONFIG, exciseCalculation, getCities, getStates, getYears, insuranceCalculation, MAP_CONFIG, portDelivery, stateDeliveryManagerCalculation, totalManagerCalculation, totalZlotyCalculation } from "../../framework/calculator";
-import "./AdminCalc.scss";
 import { getMock, LanguageContext } from "../../framework/LanguageContext";
+import "./AdminCalc.scss";
 
 export const AdminCalc: React.FC = () => {
   const language = useContext(LanguageContext);
