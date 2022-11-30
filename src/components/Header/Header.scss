@@ -59,28 +59,24 @@
   &__buttons {
     display: flex;
     justify-content: flex-end;
+    gap: 22px;
     
-    &--button-budget {
+    &__button {
+      width: 189px;
+      height: 48px;
       font-weight: 600;
       font-size: 15px;
       line-height: 18px;
       color: #FFFFFF;
       background: #880027;
       border-radius: 10px;
-      padding: 14px 12px;
       border: none;
       outline: none;
-    }
-    
-    &--button-auto {
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 18px;
-      color: #880027;
-      background: #FFFFFF;
-      border-radius: 10px;
-      padding: 14px 24px;
-      margin-left: 22px;
+
+      &:hover {
+        color: #880027;
+        background: #FFFFFF;
+      }
     }
   }
 }

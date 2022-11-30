@@ -31,10 +31,10 @@ export const Header: React.FC = () => {
             </p>
           </div>
           <div className="info__buttons">
-            <button type="button" className="info__buttons--button-budget" onClick={handlerClick}>
+            <button type="button" className="info__buttons__button" onClick={handlerClick}>
               Дізнатися бюджет авто
             </button>
-            <button type="button" className="info__buttons--button-auto" onClick={handlerClick}>
+            <button type="button" className="info__buttons__button info__buttons__button--right" onClick={handlerClick}>
               Авто під мій бюджет
             </button>
           </div>
