@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.2fdda526.css",
-    "main.js": "./static/js/main.40579348.js",
+    "main.css": "./static/css/main.4b4d1be7.css",
+    "main.js": "./static/js/main.61d63840.js",
     "static/media/header_background.png": "./static/media/header_background.0a4296ed70be927f7ba0.png",
     "static/media/Gilroy-UltraLightItalic.ttf": "./static/media/Gilroy-UltraLightItalic.87f0acd42b27a5408e0b.ttf",
     "static/media/Gilroy-ThinItalic.ttf": "./static/media/Gilroy-ThinItalic.930dc405dc78cc97a766.ttf",
@@ -38,11 +38,11 @@
     "static/media/modal_exit_icon.svg": "./static/media/modal_exit_icon.71fbbbb0659ff58ddf6bf7b08c82dfc0.svg",
     "static/media/flag_ua.svg": "./static/media/flag_ua.31cd84fefee19ab50d0a3ff76d5c82e1.svg",
     "static/media/flag_pl.svg": "./static/media/flag_pl.69f52ab9769871d6e243c38feb419a2b.svg",
-    "main.2fdda526.css.map": "./static/css/main.2fdda526.css.map",
-    "main.40579348.js.map": "./static/js/main.40579348.js.map"
+    "main.4b4d1be7.css.map": "./static/css/main.4b4d1be7.css.map",
+    "main.61d63840.js.map": "./static/js/main.61d63840.js.map"
   },
   "entrypoints": [
-    "static/css/main.2fdda526.css",
-    "static/js/main.40579348.js"
+    "static/css/main.4b4d1be7.css",
+    "static/js/main.61d63840.js"
   ]
 }
