@@ -5,12 +5,3 @@ export const getExchangeRate = async () => {
 
   return response.json();
 }
-
-
-const COPART_API = 'www.copart.com/ru/lot/62947712/'
-
-export const getCop = async () => {
-  const responce = await fetch(`${COPART_API}`);
-
-  return responce;
-}

@@ -1,7 +1,7 @@
 export const getAccess = () => {
   const access = {
-    login: "admin",
-    password: "123123123"
+    login: "leechan",
+    password: "showmethemoney"
   };
 
   return access;

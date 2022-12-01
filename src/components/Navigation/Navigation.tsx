@@ -19,7 +19,9 @@ export const Navigation: React.FC<Props> = ({ language, setLanguage }) => {
     <nav className="container">
       <div className="nav">
         <div className="nav__menu">
-          <img src={menu} alt="menu" className="nav__menu__image"/>
+          <Link to="/admin">
+            <img src={menu} alt="menu" className="nav__menu__image"/>
+          </Link>
         </div>
 
         <div className="nav__container">
