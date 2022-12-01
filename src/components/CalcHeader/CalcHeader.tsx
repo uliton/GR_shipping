@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import language from "../../framework/mock.json";
+import React, { useContext } from "react";
+import { getMock, LanguageContext } from "../../framework/LanguageContext";
 
 export const CalcHeader: React.FC = () => {
-  const [mock] = useState(language.polish.CalcHeader)
+  const language = useContext(LanguageContext);
+  const mock = getMock(language);
 
   return (
     <div className="container">
       <div className="calculator__header calcH">
         <p className="calcH__location">
-          {mock.location}
+          {mock.CalcHeader.location}
         </p>
 
         <div className="calcH__form">
           <p className="calcH__form__title">
-            {mock.form__title}
+            {mock.CalcHeader.form__title}
           </p>
 
           <div className="calcH__form__container">
@@ -24,13 +25,13 @@ export const CalcHeader: React.FC = () => {
             />
 
             <button type="button" className="calcH__form__container__button">
-              {mock.form__container__button}
+              {mock.CalcHeader.form__container__button}
             </button>
           </div>
         </div>
 
         <p className="calcH__footer">
-          {mock.footer}
+          {mock.CalcHeader.footer}
         </p>
       </div>
     </div>

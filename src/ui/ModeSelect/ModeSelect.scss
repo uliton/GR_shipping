@@ -1,0 +1,24 @@
+.modeSelect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50px;
+  height: 24px;
+  border-radius: 12px;
+  padding: 3px 4px;
+
+  &--light {
+    background: #FFE15A;
+  }
+
+  &--dark {
+    background: #102c80;
+  }
+
+  &__circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #FFF;
+  }
+}

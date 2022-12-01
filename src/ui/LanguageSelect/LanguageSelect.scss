@@ -1,0 +1,42 @@
+.languageSelect {
+  display: flex;
+  position: relative;
+  // width: 90px;
+
+  &__container {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 90px;
+    height: 28px;
+    padding: 6px;
+    background: #F7F7F7;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.14);
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #656565;
+
+    &--flag {
+      justify-content: start;
+      gap: 6px;
+      font-size: 10px;
+    }
+  }
+
+  &__flag {
+    border-radius: 2px;
+  }
+  
+}

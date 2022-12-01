@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from 'react-router-dom'
+import { getMock, LanguageContext } from "../../framework/LanguageContext";
 import exit_icon from '../../images/modal_exit_icon.svg';
 
 type Props = {
@@ -8,6 +9,8 @@ type Props = {
 }
 
 export const Modal: React.FC<Props> = ({ modalStatus, setModalStatus }) => {
+  const language = useContext(LanguageContext);
+  const mock = getMock(language);
   const [query, setQuery] = useState<string>('+38-(0');
 
   const handleExitClick = () => {
@@ -67,15 +70,15 @@ export const Modal: React.FC<Props> = ({ modalStatus, setModalStatus }) => {
 
         <div className="form__wrapper">
           <div className="form__title">
-            Для перегляду інформації вкажіть Ваш телефон і отримаєте бонус
+            {mock.IntroductionHeaderModal.title}
           </div>
 
           <div className="form__subtitle">
-            Деталі для отримання бонусу розповість наш автоексперт
+            {mock.IntroductionHeaderModal.subtitle}
           </div>
 
           <div className="form__text">
-            Номер телефону:
+            {mock.IntroductionHeaderModal.form__text}
           </div>
 
           <input
@@ -88,24 +91,24 @@ export const Modal: React.FC<Props> = ({ modalStatus, setModalStatus }) => {
           <div className="form__input form__input--checkbox checkbox">
             <input type="checkbox" id="header_modal_form_checkbox_1" className="checkbox__item" hidden/>
             <label htmlFor="header_modal_form_checkbox_1" className="checkbox__label">
-              Готовий придбати найближчим часом
+              {mock.IntroductionHeaderModal.checkbox__1}
             </label>
           </div>
 
           <div className="form__input form__input--last form__input--checkbox checkbox">
             <input type="checkbox" id="header_modal_form_checkbox_2" className="checkbox__item" hidden/>
             <label htmlFor="header_modal_form_checkbox_2" className="checkbox__label">
-              Немає всієї суми для придбання
+              {mock.IntroductionHeaderModal.checkbox__2}
             </label>
           </div>
 
-          <Link to="/calculator" className="form__submit-button">
+          <Link to="/main" className="form__submit-button">
             <button
               type="button"
               className="form__submit-button--container"
               onClick={handleSubmitClick}
             >
-              Отримати розрахунок
+              {mock.IntroductionHeaderModal.button}
             </button>
           </Link>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Modal } from "../Modal";
 import usa_icon from "../../images/usa_icon.png";
 import canada_icon from "../../images/canada_icon.png";
@@ -6,8 +6,11 @@ import classic_icon from "../../images/classic_icon.png";
 import dream_icon from "../../images/dream_icon.png";
 import moto_icon from "../../images/moto_icon.png";
 import roro_icon from "../../images/roro_icon.png";
+import { getMock, LanguageContext } from "../../framework/LanguageContext";
 
 export const Header: React.FC = () => {
+  const language = useContext(LanguageContext);
+  const mock = getMock(language);
   const [modalStatus, setModalStatus] = useState<boolean>(false);
 
   const handlerClick = () => {
@@ -17,25 +20,25 @@ export const Header: React.FC = () => {
   return (
     <div className="header">
       <p className="header__title">
-        Унікальна можливість купити авто з США та Канади без передоплати
+        {mock.IntroductionHeader.title}
       </p>
 
       <div className="header__container">
         <div className="header__container--info info">
           <div className="info__titles">
             <p className="info__titles--title">
-              Оберіть авто і дізнайтеся бюджет для його покупки
+              {mock.IntroductionHeader.subtitle__1}
             </p>
             <p className="info__titles--title">
-              Дізнайтеся які машини можна купити в вашому бюджеті
+              {mock.IntroductionHeader.subtitle__2}
             </p>
           </div>
           <div className="info__buttons">
             <button type="button" className="info__buttons__button" onClick={handlerClick}>
-              Дізнатися бюджет авто
+              {mock.IntroductionHeader.button__1}
             </button>
-            <button type="button" className="info__buttons__button info__buttons__button--right" onClick={handlerClick}>
-              Авто під мій бюджет
+            <button type="button" className="info__buttons__button" onClick={handlerClick}>
+              {mock.IntroductionHeader.button__2}
             </button>
           </div>
         </div>

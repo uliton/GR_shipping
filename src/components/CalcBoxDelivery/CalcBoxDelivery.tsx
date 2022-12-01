@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { CATEGORY_CONFIG, MAP_CONFIG } from "../../framework/calculator";
 import category_1 from '../../images/calculator/categories/category_1.png'
 import category_2 from '../../images/calculator/categories/category_2.png'
@@ -8,7 +8,7 @@ import { MapCanada } from "../../ui/MapCanada";
 import { MapGerman } from "../../ui/MapGerman";
 import { MapPoland } from "../../ui/MapPoland";
 import { MapUSA } from "../../ui/MapUSA";
-import language from "../../framework/mock.json";
+import { getMock, LanguageContext } from "../../framework/LanguageContext";
 
 type Props = {
   category: string,
@@ -27,7 +27,8 @@ type Props = {
 }
 
 export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localStateDelivery, toPortDelivery, containerAndBroker, documentsDelivery, complex, totalDeliveryPrice, setCategory, setCounty, setMap, setPort }) => {
-  const [mock] = useState(language.polish.CalcBoxDelivery);
+  const language = useContext(LanguageContext);
+  const mock = getMock(language);
 
   const [categoryImage, setCategoryImage] = useState(category_1);
   const [mapComponent, setMapComponent] = useState(<MapUSA setCounty={setCounty} />);
@@ -76,14 +77,14 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
   return (
     <div className="calculator__box calcBoxDelivery">
       <p className="calcBoxDelivery__title">
-        {mock.title}
+        {mock.CalcBoxDelivery.title}
       </p>
 
 
       <div className="calcBoxDelivery__form calcGrid">
         <div className="calcBoxDelivery__category">
           <p className="calcBoxDelivery__category__title">
-            {mock.category__title}
+            {mock.CalcBoxDelivery.category__title}
           </p>
 
           <div className="calcBoxDelivery__category__buttons">
@@ -98,10 +99,10 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
             />
             <label htmlFor="category_1" className="calcBoxDelivery__category__button">
               <p className="calcBoxDelivery__category__button__title">
-                {mock.category__1__button__title}
+                {mock.CalcBoxDelivery.category__1__button__title}
               </p>
               <p className="calcBoxDelivery__category__button__text">
-                {mock.category__1__button__text}
+                {mock.CalcBoxDelivery.category__1__button__text}
               </p>
             </label>
 
@@ -116,10 +117,10 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
             />
             <label htmlFor="category_2" className="calcBoxDelivery__category__button">
               <p className="calcBoxDelivery__category__button__title">
-                {mock.category__2__button__title}
+                {mock.CalcBoxDelivery.category__2__button__title}
               </p>
               <p className="calcBoxDelivery__category__button__text">
-                {mock.category__2__button__text}
+                {mock.CalcBoxDelivery.category__2__button__text}
               </p>
             </label>
 
@@ -134,10 +135,10 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
             />
             <label htmlFor="category_3" className="calcBoxDelivery__category__button">
               <p className="calcBoxDelivery__category__button__title">
-                {mock.category__3__button__title}
+                {mock.CalcBoxDelivery.category__3__button__title}
               </p>
               <p className="calcBoxDelivery__category__button__text">
-                {mock.category__3__button__text}
+                {mock.CalcBoxDelivery.category__3__button__text}
               </p>
             </label>
           </div>
@@ -147,7 +148,7 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
 
         <div className="calcBoxDelivery__map">
           <p className="calcBoxDelivery__map__title">
-            {mock.state__title}
+            {mock.CalcBoxDelivery.state__title}
           </p>
 
           <div className="calcBoxDelivery__map__buttons">
@@ -161,7 +162,7 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
               checked={map === MAP_CONFIG.usa}
             />
             <label htmlFor="map_usa" className="calcBoxDelivery__map__button">
-              {mock.map__button__usa}
+              {mock.CalcBoxDelivery.map__button__usa}
             </label>
 
             <input
@@ -174,7 +175,7 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
               checked={map === MAP_CONFIG.canada}
             />
             <label htmlFor="map_canada" className="calcBoxDelivery__map__button">
-              {mock.map__button__canada}
+              {mock.CalcBoxDelivery.map__button__canada}
             </label>
           </div>
 
@@ -182,7 +183,7 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
           {mapComponent}
 
           <p className="calcBoxDelivery__map__title">
-            {mock.port__title}
+            {mock.CalcBoxDelivery.port__title}
           </p>
 
           <div className="calcBoxDelivery__map__ports">
@@ -200,10 +201,10 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
               </label>
 
               <p className="calcBoxDelivery__map__port__country">
-                {mock.port__country__german}
+                {mock.CalcBoxDelivery.port__country__german}
               </p>
               <p className="calcBoxDelivery__map__port__city">
-                {mock.port__city__german}
+                {mock.CalcBoxDelivery.port__city__german}
               </p>
             </span>
 
@@ -221,34 +222,34 @@ export const CalcBoxDelivery: React.FC<Props> = ({ category, map, port, localSta
               </label>
 
               <p className="calcBoxDelivery__map__port__country">
-                {mock.port__country__poland}
+                {mock.CalcBoxDelivery.port__country__poland}
               </p>
               <p className="calcBoxDelivery__map__port__city">
-                {mock.port__city__poland}
+                {mock.CalcBoxDelivery.port__city__poland}
               </p>
             </span>
           </div>
         </div>
 
         <div className="calcBoxDelivery__resultsCont">
-          <CalcBox text={`${mock.calc__box__local__divivery} ${map === MAP_CONFIG.usa ? mock.calc__box__local__divivery__usa : mock.calc__box__local__divivery__canada}`} value={localStateDelivery} />
+          <CalcBox text={`${mock.CalcBoxDelivery.calc__box__local__divivery} ${map === MAP_CONFIG.usa ? mock.calc__box__local__divivery__usa : mock.CalcBoxDelivery.calc__box__local__divivery__canada}`} value={localStateDelivery} />
 
-          <CalcBox text={mock.calc__box__divivery__to__port} value={Number(localStateDelivery) ? toPortDelivery : "0.00"} />
+          <CalcBox text={mock.CalcBoxDelivery.calc__box__divivery__to__port} value={Number(localStateDelivery) ? toPortDelivery : "0.00"} />
 
-          <CalcBox text={mock.calc__box__divivery__container__and__broker} value={containerAndBroker} />
+          <CalcBox text={mock.CalcBoxDelivery.calc__box__divivery__container__and__broker} value={containerAndBroker} />
         </div>
 
         <div className="calcBoxDelivery__resultsCont">
-          <CalcBox text={mock.calc__box__divivery__documents} value={(Number(localStateDelivery) && Number(toPortDelivery) && documentsDelivery) || "0.00"} />
+          <CalcBox text={mock.CalcBoxDelivery.calc__box__divivery__documents} value={(Number(localStateDelivery) && Number(toPortDelivery) && documentsDelivery) || "0.00"} />
 
-          <CalcBox text={mock.calc__box__divivery__complex__service} value={(Number(localStateDelivery) && Number(toPortDelivery) && complex) || "0.00"} />
+          <CalcBox text={mock.CalcBoxDelivery.calc__box__divivery__complex__service} value={(Number(localStateDelivery) && Number(toPortDelivery) && complex) || "0.00"} />
         </div>
       </div>
 
 
       <div className="calcBoxDelivery__footer">
         <p>
-          {mock.footer}
+          {mock.CalcBoxDelivery.footer}
         </p>
 
         <p>

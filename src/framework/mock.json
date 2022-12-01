@@ -1,12 +1,50 @@
 {
   
     "ukrainian": {
+      "NavHeader": {
+        "main": "Головна",
+        "cataloge": "Каталог авто",
+        "brands": "Марки",
+        "blog": "Блог",
+        "cabinet": "Особистий кабінет"
+      },
+
+
+
+      "IntroductionHeader": {
+        "title": "Унікальна можливість купити авто з США та Канади без передоплати",
+        "subtitle__1": "Оберіть авто і дізнайтеся бюджет для його покупки",
+        "subtitle__2": "Дізнайтеся які машини можна купити в вашому бюджеті",
+        "button__1": "Дізнатися бюджет авто",
+        "button__2": "Авто під мій бюджет"
+      },
+
+      "IntroductionHeaderModal": {
+        "title": "Для перегляду інформації вкажіть Ваш телефон і отримаєте бонус",
+        "subtitle": "Деталі для отримання бонусу розповість наш автоексперт",
+        "form__text": "Номер телефону:",
+        "checkbox__1": "Готовий придбати найближчим часом",
+        "checkbox__2": "Немає всієї суми для придбання",
+        "button": "Отримати розрахунок"
+      },
+
+
+
+      "NavFooter": {
+        "about": "Про нас",
+        "delivery": "Доставка",
+        "security_policy": "Політика безпеки",
+        "terms": "Умови угоди"
+      },
+      
+      
       "CalcHeader": {
         "location": "Головна",
         "form__title": "Вставте посилання з Copart або IAAI:",
         "form__container__button": "Сканувати",
         "footer": "Або введіть дані самостійно:"
       },
+      
       "CalcBoxCustoms": {
         "title": "Калькулятор розмитнення",
         "engine__title": "Двигун:",
@@ -26,6 +64,7 @@
         "insurance__0": "без страхового внеску",
         "footer": "Сума платежів"
       },
+      
       "CalcBoxDelivery": {
         "title": "Калькулятор доставки",
         "category__title": "Кузов:",
@@ -54,6 +93,7 @@
         "calc__box__divivery__complex__service": "Комплексні послуги",
         "footer": "Вартість доставки"
       },
+      
       "CalcBoxTotalCost": {
         "title": "Загальна сума",
         "calc__box__price__and__fee": "Вартість лоту + збір аукціону",
@@ -66,15 +106,61 @@
         "footer__button__buy": "КУПИТИ АВТО"
       }
     },
-  
-  
+
+
+
+
+
+
+
+
+
+
     "polish": {
+      "NavHeader": {
+        "main": "Główny",
+        "cataloge": "Katalog samochodów",
+        "brands": "Marki",
+        "blog": "Blog",
+        "cabinet": "Biuro osobiste"
+      },
+
+
+
+      "IntroductionHeader": {
+        "title": "Wyjątkowa okazja zakupu samochodu z USA i Kanady bez przedpłaty",
+        "subtitle__1": "Wybierz samochód i poznaj budżet na jego zakup",
+        "subtitle__2": "Dowiedz się, które samochody możesz kupić w swoim budżecie",
+        "button__1": "Sprawdź budżet samochodu",
+        "button__2": "Auto na mój budżet"
+      },
+
+      "IntroductionHeaderModal": {
+        "title": "Aby wyświetlić informacje, wprowadź swój numer telefonu i otrzymaj bonus",
+        "subtitle": "Nasz ekspert samochodowy poinformuje Cię o szczegółach otrzymania bonusu",
+        "form__text": "Numer telefonu:",
+        "checkbox__1": "Gotowy do zakupu wkrótce",
+        "checkbox__2": "Cała kwota nie jest dostępna do zakupu",
+        "button": "Uzyskaj kalkulację"
+      },
+
+
+      "NavFooter": {
+        "about": "O nas",
+        "delivery": "Dostawa",
+        "security_policy": "Polityka bezpieczeństwa",
+        "terms": "Warunki umowy"
+      },
+
+
+
       "CalcHeader": {
         "location": "Główny",
         "form__title": "Wklej link z Copart lub IAAI:",
         "form__container__button": "Skanowanie",
         "footer": "Lub wprowadź dane samodzielnie:"
       },
+
       "CalcBoxCustoms": {
         "title": "Kalkulator odpraw celnych",
         "engine__title": "Silnik:",
@@ -94,6 +180,7 @@
         "insurance__0": "bez składki ubezpieczeniowej",
         "footer": "Kwota płatności"
       },
+
       "CalcBoxDelivery": {
         "title": "Kalkulator dostawy",
         "category__title": "Ciało:",
@@ -122,6 +209,7 @@
         "calc__box__divivery__complex__service": "Kompleksowe usługi",
         "footer": "Koszty wysyłki"
       },
+
       "CalcBoxTotalCost": {
         "title": "Całkowity",
         "calc__box__price__and__fee": "Cena przedmiotu + opłata aukcyjna",

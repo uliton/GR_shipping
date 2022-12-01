@@ -4,6 +4,8 @@ import logo from "../../images/nav/logo.svg";
 import "./Navigation.scss";
 import { LanguageSelect } from "../../ui/LanguageSelect";
 import { ModeSelect } from "../../ui/ModeSelect";
+import { Link } from "react-router-dom";
+import { getMock } from "../../framework/LanguageContext";
 
 type Props = {
   language: string,
@@ -11,6 +13,8 @@ type Props = {
 }
 
 export const Navigation: React.FC<Props> = ({ language, setLanguage }) => {
+  const mock = getMock(language);
+
   return (
     <nav className="container">
       <div className="nav">
@@ -19,23 +23,36 @@ export const Navigation: React.FC<Props> = ({ language, setLanguage }) => {
         </div>
 
         <div className="nav__container">
-          <img src={logo} alt="GRshopping Logo" className="nav__logo"/>
+          <Link to="/">
+            <img src={logo} alt="GRshopping Logo" className="nav__logo"/>
+          </Link>
 
           <ul className="nav__list">
             <li className="nav__item">
-              <a href="/">Головна</a>
+              <Link to="/main">
+                {mock.NavHeader.main}
+              </Link>
             </li>
             <li className="nav__item">
-              <a href="/">Каталог авто</a>
+            <Link to="/">
+              {mock.NavHeader.cataloge}
+
+            </Link>
             </li>
             <li className="nav__item">
-              <a href="/">Марки</a>
+            <Link to="/">
+              {mock.NavHeader.brands}
+            </Link>
             </li>
             <li className="nav__item">
-              <a href="/">Блог</a>
+              <Link to="/">
+                {mock.NavHeader.blog}
+              </Link>
             </li>
             <li className="nav__item">
-              <a href="/">Особистий кабінет</a>
+              <Link to="/">
+                {mock.NavHeader.cabinet}
+              </Link>
             </li>
             <li className="nav__item nav__item--last">
               <a href="mailto:info@grshipping.pl">info@grshipping.pl</a>

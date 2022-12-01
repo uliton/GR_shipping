@@ -10,7 +10,7 @@
   margin-bottom: 40px;
 
   &__title {
-    width: 635px;
+    width: 682px;
     height: 76px;
     font-weight: 700;
     font-size: 38.2957px;
@@ -26,7 +26,7 @@
     justify-content: space-between;
   
     &--info {
-      width: 422px;
+      width: 440px;
     }
 
     &--categories {
@@ -62,7 +62,8 @@
     gap: 22px;
     
     &__button {
-      width: 189px;
+      width: max-content;
+      padding: 14px;
       height: 48px;
       font-weight: 600;
       font-size: 15px;
